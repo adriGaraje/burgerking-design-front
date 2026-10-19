@@ -102,21 +102,47 @@ const EnCurso = () => (
   </span>
 )
 
+// Piezas que pone el cliente (story con `tags: [..., 'client-owned']`): se enseñan
+// para ver la página completa, pero no se entregan. Va también en pro: es justo
+// quien recibe la entrega quien tiene que saberlo.
+const DelCliente = () => (
+  <span
+    title="Pieza del cliente: la pone Burger King, no forma parte de la entrega"
+    style={{
+      marginLeft: 6,
+      padding: '1px 5px',
+      borderRadius: 4,
+      background: '#502314',
+      color: '#fff',
+      fontSize: 9,
+      fontWeight: 700,
+      letterSpacing: '0.06em',
+      whiteSpace: 'nowrap',
+      flex: '0 0 auto',
+    }}
+  >
+    DE BK
+  </span>
+)
+
 // Se marca el nodo de la PIEZA (el plegable), no cada una de sus stories: el
 // estado es de la pieza entera y repetirlo en cada variante sería ruido.
 const renderLabel = (item) => {
-  const info = item.type === 'component' || item.type === 'docs' ? POR_ID.get(item.id) : null
+  const pieza = item.type === 'component' || item.type === 'docs'
+  const info = pieza ? POR_ID.get(item.id) : null
+  // Solo en el nodo de la pieza: repetida en su «Docs» hijo sería ruido.
+  const delCliente = item.type === 'component' && (item.tags ?? []).includes('client-owned')
 
   const enCursoVisible = info?.enCurso && !A_PRO
-  if (!info || (info.cambio !== 'nuevo' && info.cambio !== 'modificado' && !enCursoVisible)) {
-    return item.name
-  }
+  const conCambio = info && (info.cambio === 'nuevo' || info.cambio === 'modificado')
+  if (!conCambio && !enCursoVisible && !delCliente) return item.name
 
   return (
     <span style={{ display: 'inline-flex', alignItems: 'center', minWidth: 0 }}>
-      {MARCAS[info.cambio] ? <Marca tipo={info.cambio} /> : null}
+      {MARCAS[info?.cambio] ? <Marca tipo={info.cambio} /> : null}
       <span style={{ overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.name}</span>
-      {info.enCurso && !A_PRO ? <EnCurso /> : null}
+      {delCliente ? <DelCliente /> : null}
+      {enCursoVisible ? <EnCurso /> : null}
     </span>
   )
 }

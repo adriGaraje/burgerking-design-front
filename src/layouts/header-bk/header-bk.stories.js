@@ -3,6 +3,7 @@
 import { expect, within } from 'storybook/test'
 import html from './header-bk.html?raw'
 import { sinComentarios } from '../../stories/lib/hooks.js'
+import { avisoCliente } from '../../stories/lib/aviso-cliente.js'
 import { DATOS, renderHeaderBk } from './datos-header-bk.js'
 
 const ETIQUETA = '<header-bk></header-bk>'
@@ -15,7 +16,9 @@ const normaliza = (s) =>
 
 export default {
   title: 'Layouts/Header Bk',
-  tags: ['WIP'],
+  // `client-owned`: la barra lateral le pone la etiqueta «DE BK» (manager.jsx).
+  tags: ['WIP', 'client-owned'],
+  decorators: [avisoCliente('header-bk')],
   render: () => renderHeaderBk(DATOS),
   parameters: {
     layout: 'fullscreen',
