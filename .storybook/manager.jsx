@@ -135,7 +135,8 @@ addons.setConfig({
     //
     // Es solo el estado INICIAL: Storybook recuerda lo que abre cada persona, así
     // que quien despliegue una sección la encuentra abierta la próxima vez.
-    collapsedRoots: typeof window !== 'undefined' ? (window.BURGERKING_DESIGN_FRONT_RAICES_PLEGADAS ?? []) : [],
+    collapsedRoots:
+      typeof window !== 'undefined' ? (window.BURGERKING_DESIGN_FRONT_RAICES_PLEGADAS ?? []) : [],
   },
 })
 

@@ -52,16 +52,16 @@
   },
   "deploy": {
     "provider": "Firebase Hosting",
-    "firebaseProject": "TODO",
+    "firebaseProject": "storybook-bk",
     "tool": "npx firebase-tools",
-    "site": "TODO",
-    "url": "TODO",
+    "site": "storybook-bk",
+    "url": "https://storybook-bk.web.app",
     "comandoUnico": "npm run deploy — NO se le dice el destino: scripts/deploy.mjs lee la rama actual y de ahí sale (develop → pre, main → entrega, cualquier otra aborta). Antes de construir exige árbol limpio y rama al día con origin. `npm run deploy:pre` es la escotilla para publicar la rama actual en pre, nunca en pro.",
     "targets": {
       "pre": {
         "hostingTarget": "pre",
-        "site": "TODO",
-        "url": "TODO",
+        "site": "storybook-bk-pre",
+        "url": "https://storybook-bk-pre.web.app",
         "rama": "develop",
         "public": "storybook-static",
         "build": "npm run build-storybook",
@@ -69,15 +69,16 @@
       },
       "entrega": {
         "hostingTarget": "entrega",
-        "site": "TODO",
-        "url": "TODO",
+        "site": "storybook-bk",
+        "url": "https://storybook-bk.web.app",
         "rama": "main",
         "public": "storybook-static",
         "build": "npm run build-storybook",
         "deploy": "npm run deploy"
       }
     },
-    "sitioRetirado": null
+    "sitioRetirado": null,
+    "firebaseAccount": "comu.pagos@gmail.com (PROVISIONAL: cuenta personal hasta tener permisos en la de empresa)"
   },
   "team": [
     {

@@ -47,7 +47,8 @@ const arg = (name) => {
   return i === -1 ? null : argv[i + 1]
 }
 const snapshotPath =
-  arg('--snapshot') ?? resolve(REPO, 'docs/burgerking-design-front-harness/figma-tokens.snapshot.json')
+  arg('--snapshot') ??
+  resolve(REPO, 'docs/burgerking-design-front-harness/figma-tokens.snapshot.json')
 const escribirSnapshot = argv.includes('--write-snapshot')
 const freshPath = argv.find((a, i) => !a.startsWith('--') && argv[i - 1] !== '--snapshot')
 

@@ -14,6 +14,8 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+    "deploy": "node scripts/deploy.mjs",
+    "deploy:pre": "node scripts/deploy.mjs --pre",
     "check:stories": "node scripts/storybook-check.mjs",
     "check:paginas": "node scripts/paginas-check.mjs",
     "check:plays": "node scripts/play-errors.mjs",

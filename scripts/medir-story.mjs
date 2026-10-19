@@ -80,7 +80,9 @@ try {
   mkdirSync(tmpDir, { recursive: true })
   sels.forEach(escribe)
   rmSync(dir, { recursive: true, force: true })
-  execSync(`BURGERKING_DESIGN_FRONT_STORYBOOK_TODO=1 npx storybook build -o ${dir}`, { stdio: 'ignore' })
+  execSync(`BURGERKING_DESIGN_FRONT_STORYBOOK_TODO=1 npx storybook build -o ${dir}`, {
+    stdio: 'ignore',
+  })
   for (const ancho of anchos) {
     if (ancho) console.log(`— ${ancho} —`)
     sels.forEach((sel, i) => {

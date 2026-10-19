@@ -100,7 +100,8 @@ for (const f of ficheros) {
   } else if (!exento || exento.tambienMovil) {
     const scss = join(RAIZ, 'src', 'modules', modulo, `${modulo}.scss`)
     const leeElHueco =
-      existsSync(scss) && readFileSync(scss, 'utf8').includes('--burgerking-design-front-header-space')
+      existsSync(scss) &&
+      readFileSync(scss, 'utf8').includes('--burgerking-design-front-header-space')
     exige(
       leeElHueco,
       exento

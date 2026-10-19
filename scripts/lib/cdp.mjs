@@ -251,7 +251,8 @@ const json = (puerto, ruta) =>
 // del fichero `DevToolsActivePort` que Chrome escribe en su perfil: pedir un
 // puerto fijo se choca con otra instancia sin avisar.
 export async function abreChrome({ ancho = 1280, alto = 900 } = {}) {
-  if (!CHROME) throw new Error('No encuentro Chrome. Indícalo con BURGERKING_DESIGN_FRONT_CHROME=<ruta>.')
+  if (!CHROME)
+    throw new Error('No encuentro Chrome. Indícalo con BURGERKING_DESIGN_FRONT_CHROME=<ruta>.')
 
   const perfil = mkdtempSync(join(tmpdir(), 'burgerking-design-front-cdp-'))
   const chrome = spawn(

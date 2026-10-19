@@ -17,7 +17,8 @@ const PUERTA = CON_PUERTA ? '\n<script type="module" src="/guard.js"></script>' 
 // 'suspended']`), que vive al lado del componente: nada de allowlists en otro
 // fichero, que se olvidan. `check:stories` compila todo sin publicar (ver
 // scripts/storybook-check.mjs).
-const LOCAL = process.argv.includes('dev') || process.env.BURGERKING_DESIGN_FRONT_STORYBOOK_TODO === '1'
+const LOCAL =
+  process.argv.includes('dev') || process.env.BURGERKING_DESIGN_FRONT_STORYBOOK_TODO === '1'
 
 const RAIZ = fileURLToPath(new URL('..', import.meta.url))
 const SRC = join(RAIZ, 'src')

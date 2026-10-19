@@ -187,7 +187,9 @@ const sustituyeBloques = (html, tipo, encaja, nuevo, quien) => {
   if (PERFIL.sinHooks) return html
   // Solo los de más fuera que encajan: uno de dentro viaja en el cuerpo del de fuera.
   const todos = recorre(analiza(html, quien), tipo).filter(encaja)
-  const fuera = todos.filter((b) => !todos.some((o) => o !== b && o.desde < b.desde && b.hasta <= o.hasta))
+  const fuera = todos.filter(
+    (b) => !todos.some((o) => o !== b && o.desde < b.desde && b.hasta <= o.hasta)
+  )
   return fuera
     .sort((a, b) => b.desde - a.desde)
     .reduce((acc, b) => acc.slice(0, b.desde) + nuevo(b, acc) + acc.slice(b.hasta), html)

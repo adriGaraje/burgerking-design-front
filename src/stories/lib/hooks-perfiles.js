@@ -40,8 +40,7 @@ const llaves = ({ defecto }) => ({
   },
   ruta: rutaLlaves,
   crudo: /\{\{[\s\S]*?\}\}|\{%[\s\S]*?%\}/g,
-  incluye: (p) =>
-    new RegExp(`\\{%-?\\s*(?:include|render)\\s+["']${escapa(p)}["'][\\s\\S]*?%\\}`),
+  incluye: (p) => new RegExp(`\\{%-?\\s*(?:include|render)\\s+["']${escapa(p)}["'][\\s\\S]*?%\\}`),
 })
 
 // ── familia $: Blade y PHP ──────────────────────────────────────────────────
