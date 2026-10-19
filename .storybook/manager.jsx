@@ -121,7 +121,7 @@ const DelCliente = () => (
       flex: '0 0 auto',
     }}
   >
-    DE BK
+    CLIENTE
   </span>
 )
 
@@ -130,8 +130,12 @@ const DelCliente = () => (
 const renderLabel = (item) => {
   const pieza = item.type === 'component' || item.type === 'docs'
   const info = pieza ? POR_ID.get(item.id) : null
-  // Solo en el nodo de la pieza: repetida en su «Docs» hijo sería ruido.
-  const delCliente = item.type === 'component' && (item.tags ?? []).includes('client-owned')
+  // Solo en el nodo de la pieza: repetida en su «Docs» hijo sería ruido. Sale del estado
+  // (`cambio: 'cliente'`) o, sin estado, de la etiqueta de la story. Una pieza del cliente
+  // no lleva «+» ni «EN CURSO»: no es nuestra ni se entrega.
+  const delCliente =
+    item.type === 'component' &&
+    (info?.cambio === 'cliente' || (item.tags ?? []).includes('client-owned'))
 
   const enCursoVisible = info?.enCurso && !A_PRO
   const conCambio = info && (info.cambio === 'nuevo' || info.cambio === 'modificado')

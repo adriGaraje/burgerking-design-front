@@ -16,7 +16,7 @@ const normaliza = (s) =>
 
 export default {
   title: 'Layouts/Header Bk',
-  // `client-owned`: la barra lateral le pone la etiqueta «DE BK» (manager.jsx).
+  // `client-owned`: pieza del cliente; la barra lateral le pone «CLIENTE» (manager.jsx).
   tags: ['WIP', 'client-owned'],
   decorators: [avisoCliente('header-bk')],
   render: () => renderHeaderBk(DATOS),

@@ -903,3 +903,10 @@
 - **Causa:** dos distintas. (1) El atenuado iba por `IntersectionObserver` contra la pista: es asíncrono, la story engancha el carrusel antes de colgarlo del documento y, aunque se dispare, mide «visible dentro de la pista», no «fuera de las flechas». (2) Ya con medidas síncronas contra las flechas, en móvil las flechas están en `display: none`: `getBoundingClientRect()` devuelve 0 y ese 0 hacía de límite, así que todo quedaba «fuera».
 - **Solución:** cálculo síncrono en el mismo `actualiza()` que corre en scroll y en resize, contra la caja de las flechas **solo si se pintan** (`getClientRects().length > 0`) y no están apagadas; si no, contra el borde de la pista. Y el `play` comprueba el criterio exacto (los cortados atenuados y los demás no, y nunca todos), no solo que el carrusel arranca.
 - **Regla general:** antes de usar la caja de un elemento como límite, comprueba que se pinta: un `display: none` mide 0 y no avisa. Y un `play` que solo mira que algo «arranca» no ve un estado visual roto: aserta el estado.
+
+## L-107 · En un `.mdx`, un comentario `//` pegado a un `export` se come el export
+
+- **Síntoma:** Release Notes dejó de pintarse en el navegador con «Expected component `PastillaCliente` to be defined». `build`, `build-storybook`, `check:stories` y los `play` estaban en verde: una página `.mdx` no tiene `play` que la ejecute.
+- **Causa:** fuera de un bloque ESM, MDX lee una línea `// …` como texto de párrafo, y el `export const` de la línea siguiente, sin línea en blanco, como continuación de ese párrafo. El componente nunca llegó a definirse.
+- **Solución:** comentarios de MDX `{/* … */}` y línea en blanco antes del `export`, como el resto del fichero. Un `//` solo vale DENTRO de un bloque que ya empezó con `export`.
+- **Regla general:** tras tocar un `.mdx` de documentación (Welcome, Release Notes, fichas), ábrelo en una build —captura de `iframe.html?id=<id>--docs&viewMode=docs`—: ningún gate lo renderiza.

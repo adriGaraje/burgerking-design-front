@@ -55,6 +55,7 @@
 - **L-011** · El CSS de un snippet compuesto no basta — Al entregar el código de una pieza compuesta, la pregunta no es qué le pertenece en su propio fichero, sino qué hace falta para que se vea igual fuera del entorno de desarrollo.
 - **L-010** · Los cuatro gates en verde y la story reventando — los bucles que envuelven a otros tienen que ser codiciosos y llegar al último `{% endfor %}`; solo el de más adentro puede ir perezoso.
 - **L-106** · Un estado visual que depende de medir no se calcula contra lo que no se pinta — un `display: none` mide 0 y como límite lo arrastra todo; comprueba `getClientRects().length` y aserta el estado en el `play`.
+- **L-107** · En un `.mdx`, un comentario `//` pegado a un `export` se come el export — comentarios `{/* */}` y línea en blanco; tras tocar un `.mdx`, ábrelo en una build: ningún gate lo renderiza.
 
 ## Para el Ojo · medir y capturar
 

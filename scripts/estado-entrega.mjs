@@ -19,6 +19,9 @@
 //    modificado  existía y alguno de sus ficheros ha cambiado desde entonces
 //    estable     existía y no se ha tocado
 //    en-curso    story con tags: ['WIP'] — se publica, pero no está cerrada
+//    cliente     story con tags: [..., 'client-owned'] — la pone el cliente (cabecera y
+//                pie de burgerking.es): se enseña, pero no se entrega, así que ni es
+//                nueva, ni modificada, ni está en curso para quien la recibe
 //
 //  Los tres primeros son HECHOS DEL PASADO y salen de `git diff`. El cuarto es
 //  una DECLARACIÓN sobre el futuro y sale de la etiqueta de la story, que es
@@ -179,6 +182,7 @@ function leerPiezas() {
         carpeta: dirname(f),
         titulo: titulo?.[1] ?? null,
         etiqueta: etiqueta ? etiquetaDe(etiqueta[1]) : null,
+        cliente: Boolean(etiqueta?.[1].includes("'client-owned'")),
       }
     })
     .filter((p) => p.titulo)
@@ -259,20 +263,22 @@ const resultado = piezas
     const existia = existian.has(posix(p.fichero)) && !suspendidasEnLaEntrega.has(posix(p.fichero))
     const cambiados = ficheros.filter((f) => tocados.has(f))
 
-    const cambio = !ancla
-      ? 'sin-referencia'
-      : !existia
-        ? 'nuevo'
-        : cambiados.length
-          ? 'modificado'
-          : 'estable'
+    const cambio = p.cliente
+      ? 'cliente'
+      : !ancla
+        ? 'sin-referencia'
+        : !existia
+          ? 'nuevo'
+          : cambiados.length
+            ? 'modificado'
+            : 'estable'
 
     return {
       titulo: p.titulo,
       id: sanitize(p.titulo),
       pieza: p.base,
       cambio,
-      enCurso: p.etiqueta === 'WIP',
+      enCurso: p.etiqueta === 'WIP' && !p.cliente,
       ficherosTocados: cambiados.length,
       // Se guardan los nombres para que Release Notes pueda enseñar QUÉ cambió y
       // no solo que cambió. Un «modificado» sin detalle obliga a ir a git igual.
@@ -292,6 +298,7 @@ const salida = {
     modificadas: resultado.filter((p) => p.cambio === 'modificado').length,
     estables: resultado.filter((p) => p.cambio === 'estable').length,
     enCurso: resultado.filter((p) => p.enCurso).length,
+    cliente: resultado.filter((p) => p.cambio === 'cliente').length,
     total: resultado.length,
   },
   piezas: resultado,
@@ -306,7 +313,7 @@ const ref = ancla
   : 'SIN TAG DE ENTREGA — todo sale «sin-referencia»'
 console.log(`entrega · estado.json        ${r.total} piezas · ref: ${ref}`)
 console.log(
-  `           ${r.nuevas} nueva(s) · ${r.modificadas} modificada(s) · ${r.estables} estable(s) · ${r.enCurso} en curso`
+  `           ${r.nuevas} nueva(s) · ${r.modificadas} modificada(s) · ${r.estables} estable(s) · ${r.enCurso} en curso · ${r.cliente} del cliente`
 )
 
 if (!ancla) {
@@ -347,6 +354,7 @@ if (process.argv.includes('--print')) {
       modificado: 'MODIFICADO',
       estable: '          ',
       'sin-referencia': '?         ',
+      cliente: 'CLIENTE   ',
     }[p.cambio]
     console.log(`  ${marca} ${p.enCurso ? 'en curso · ' : '           '}${p.titulo}`)
   }
