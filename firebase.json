@@ -1,0 +1,35 @@
+{
+  "hosting": [
+    {
+      "target": "entrega",
+      "public": "storybook-static",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "headers": [
+        {
+          "source": "**/*.@(html|json)",
+          "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+        },
+        {
+          "source": "/@(guard|firebase-config).js",
+          "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+        }
+      ]
+    },
+    {
+      "//": "Pre: el mismo build de entrega, publicado antes para verificarlo. Misma config que `entrega` a propósito: si pre no es idéntico a pro, no verifica nada. Se publica desde `develop`; `main` es lo único que llega a `entrega`.",
+      "target": "pre",
+      "public": "storybook-static",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "headers": [
+        {
+          "source": "**/*.@(html|json)",
+          "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+        },
+        {
+          "source": "/@(guard|firebase-config).js",
+          "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+        }
+      ]
+    }
+  ]
+}

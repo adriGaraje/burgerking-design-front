@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Burger King Design — Login</title>
+    <style>
+      :root {
+        /* Colores de marca Burger King. Esta página va fuera del bundle:
+           cuando estén los tokens de Figma, espeja src/styles/settings/_tokens.scss. */
+        --bk-red: #d62300;
+        --bk-ink: #502314;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* Rojo BK con oscurecimiento hacia abajo. */
+        background: linear-gradient(180deg, var(--bk-red) 0%, var(--bk-ink) 100%);
+        font-family: 'Segoe UI', system-ui, sans-serif;
+        color: var(--bk-ink);
+      }
+      .card {
+        width: min(92vw, 380px);
+        background: #fff;
+        border-radius: 20px;
+        padding: 32px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+      }
+      .brand {
+        font-size: 28px;
+        font-weight: 800;
+        color: var(--bk-red);
+        margin: 0;
+      }
+      .brand span {
+        color: var(--bk-ink);
+      }
+      .subtitle {
+        margin: 4px 0 24px;
+        color: #6b7280;
+        font-size: 14px;
+      }
+      .powered {
+        margin: 18px 0 0;
+        text-align: center;
+        color: #b6bcc7;
+        font-size: 11px;
+      }
+      label {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        margin: 14px 0 6px;
+      }
+      input {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1px solid #d1d5db;
+        border-radius: 10px;
+        font-size: 15px;
+      }
+      input:focus {
+        outline: 2px solid var(--bk-red);
+        border-color: var(--bk-red);
+      }
+      button {
+        width: 100%;
+        margin-top: 22px;
+        padding: 12px;
+        border: 0;
+        border-radius: 999px;
+        background: var(--bk-red);
+        color: #fff;
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      button:disabled {
+        opacity: 0.6;
+        cursor: default;
+      }
+      .error {
+        margin: 14px 0 0;
+        color: #c0392b;
+        font-size: 13px;
+        min-height: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <h1 class="brand">Burger King Design Storybook</h1>
+      <p class="subtitle">Y respira.</p>
+      <form id="login-form">
+        <label for="email">Email</label>
+        <input id="email" type="email" autocomplete="username" required />
+        <label for="password">Contraseña</label>
+        <input id="password" type="password" autocomplete="current-password" required />
+        <button id="submit" type="submit">Entrar</button>
+        <p class="error" id="error" role="alert"></p>
+      </form>
+      <p class="powered">Powered by Garaje de Ideas</p>
+    </main>
+
+    <script type="module">
+      import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js'
+      import {
+        getAuth,
+        signInWithEmailAndPassword,
+        onAuthStateChanged,
+        setPersistence,
+        browserLocalPersistence,
+      } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js'
+      import { firebaseConfig } from '/firebase-config.js'
+
+      const auth = getAuth(initializeApp(firebaseConfig))
+
+      // Only allow same-origin redirect targets (avoid open redirect).
+      const raw = new URLSearchParams(location.search).get('next') || '/'
+      const next = raw.startsWith('/') && !raw.startsWith('//') ? raw : '/'
+
+      // Already signed in → go straight to Storybook.
+      onAuthStateChanged(auth, (user) => {
+        if (user) location.replace(next)
+      })
+
+      const form = document.getElementById('login-form')
+      const errorEl = document.getElementById('error')
+      const submitEl = document.getElementById('submit')
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault()
+        errorEl.textContent = ''
+        submitEl.disabled = true
+        try {
+          await setPersistence(auth, browserLocalPersistence)
+          await signInWithEmailAndPassword(
+            auth,
+            document.getElementById('email').value.trim(),
+            document.getElementById('password').value
+          )
+          location.replace(next)
+        } catch (err) {
+          errorEl.textContent = 'Email o contraseña incorrectos.'
+          submitEl.disabled = false
+        }
+      })
+    </script>
+  </body>
+</html>

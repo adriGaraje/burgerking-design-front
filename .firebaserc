@@ -1,0 +1,18 @@
+{
+  "projects": {
+    "default": "storybook-bk"
+  },
+  "targets": {
+    "storybook-bk": {
+      "hosting": {
+        "entrega": [
+          "storybook-bk"
+        ],
+        "pre": [
+          "storybook-bk-pre"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
