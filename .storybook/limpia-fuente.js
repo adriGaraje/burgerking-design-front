@@ -92,6 +92,14 @@ export const limpiaFuente = (fuente) => {
   // día alguien marque algo por dentro.
   cuerpo.querySelectorAll('[data-burgerking-design-front-preview]').forEach(desenvuelve)
 
+  // Piezas del cliente (cabecera y footer de burgerking.es): se pintan para que la
+  // página se entienda, pero no son nuestras y no se entregan. En el código quedan
+  // como su etiqueta vacía (`<header-bk></header-bk>`), que dice dónde van y de quién son.
+  cuerpo.querySelectorAll('[data-burgerking-design-front-client-owned]').forEach((el) => {
+    const etiqueta = doc.createElement(el.dataset.burgerkingDesignFrontClientOwned)
+    el.replaceWith(etiqueta)
+  })
+
   // La caja de montaje, solo si es la raíz, es un `div` pelado y envuelve a UNA
   // pieza. Si envuelve a varias es una story de comparación —tres tamaños de
   // botón, dos estados— y ahí el envoltorio SÍ es parte de lo que se enseña.
