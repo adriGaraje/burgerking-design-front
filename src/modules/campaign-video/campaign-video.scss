@@ -1,0 +1,79 @@
+// COMPONENT · campaign-video — vídeo de campaña 16:9 (`embed-responsive` de Bootstrap).
+// Fondo: el gris `#f8f8f8` del wireframe pasa a crema de marca (provisional).
+// El póster sin vídeo es decisión nuestra: el wireframe solo pone un relleno gris.
+.campaign-video {
+  padding: 24px 0;
+  background-color: $brand-surface-alt;
+
+  @include media-breakpoint-up(md) {
+    padding: 40px 0;
+  }
+}
+
+.campaign-video__inner {
+  @include wrap;
+}
+
+// 720 × 405 centrado, radio 32 (16 en móvil). `isolation` para que el radio recorte
+// también al iframe en Safari.
+.campaign-video__frame {
+  max-width: 720px;
+  margin: 0 auto;
+  isolation: isolate;
+  background-color: $brand-ink;
+  border-radius: 16px;
+
+  @include media-breakpoint-up(md) {
+    border-radius: 32px;
+  }
+
+  // Borde de 1 px por DENTRO (Figma: inside, 10 % negro). Va encima del iframe:
+  // un `box-shadow` del propio marco quedaría debajo de su contenido.
+  &::after {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    content: '';
+    border-radius: inherit;
+    box-shadow: inset 0 0 0 1px rgba($black, 0.1);
+  }
+}
+
+.campaign-video__placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $brand-on-primary;
+}
+
+.campaign-video__poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+// El play dibujado: es un adorno mientras no hay vídeo, no un botón.
+.campaign-video__play {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background-color: $brand-primary;
+  border-radius: 50%;
+
+  @include media-breakpoint-up(md) {
+    width: 80px;
+    height: 80px;
+  }
+
+  svg {
+    width: 50%;
+    height: 50%;
+    margin-left: 6%;
+  }
+}

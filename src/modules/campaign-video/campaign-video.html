@@ -1,0 +1,21 @@
+<!--
+  Snippet campaign-video — vídeo de campaña 16:9 (Figma 8206:250, OCULTO en el wireframe).
+  HTML estático: es renderCampaignVideo(VARIANTES.oleada1) de datos-campaign-video.js.
+  Sin ID de YouTube todavía: póster con el play dibujado. Con URL, el iframe youtube-nocookie.
+-->
+<section class="campaign-video" aria-label="Vídeo de la campaña">
+  <div class="campaign-video__inner">
+    <div class="campaign-video__frame embed-responsive embed-responsive-16by9">
+      <div
+        class="embed-responsive-item campaign-video__placeholder"
+        role="img"
+        aria-label="Vídeo de la campaña (próximamente)"
+      >
+        <span class="campaign-video__play" aria-hidden="true"
+          ><svg width="24" height="24" viewBox="0 0 24 24" focusable="false">
+            <path d="M8 5v14l11-7z" fill="currentColor" /></svg
+        ></span>
+      </div>
+    </div>
+  </div>
+</section>

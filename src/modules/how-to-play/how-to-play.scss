@@ -1,0 +1,114 @@
+// COMPONENT · how-to-play — «¿Cómo jugar?»: cabecera, pasos, nota y badges de tienda
+// (Figma 8206:159). Espaciados verticales con utilidades de Bootstrap en el marcado
+// (cabecera → pasos 24, pasos → pie 24, nota → badges 16).
+// El wireframe tiene alto fijo 500 y el contenido no cabe con su padding de 40: aquí va
+// padding real de 40 y alto libre (spec, pregunta 2).
+// Fondo #fff → $brand-surface; borde #687787 de las tarjetas → el de Bootstrap (provisional).
+
+.how-to-play {
+  padding: 2.5rem 0;
+  background-color: $brand-surface;
+}
+
+.how-to-play__inner {
+  @include wrap;
+}
+
+.how-to-play__title {
+  @include text-style('mobile-h2');
+
+  @include media-breakpoint-up(md) {
+    @include text-style('h2');
+  }
+}
+
+.how-to-play__subtitle,
+.how-to-play__step-text,
+.how-to-play__footnote {
+  @include text-style('mobile-body');
+
+  @include media-breakpoint-up(md) {
+    @include text-style('body');
+  }
+}
+
+// Bootstrap 4.1.3 no trae `gap`: la rejilla da 30 de calle y el diseño pide 24.
+.how-to-play__steps {
+  gap: 1rem;
+
+  @include media-breakpoint-up(md) {
+    gap: 1.5rem;
+  }
+}
+
+.how-to-play__step {
+  background-color: $brand-surface;
+
+  // Tres columnas a partes iguales; con más pasos, bajan a otra fila.
+  @include media-breakpoint-up(md) {
+    flex: 1 1 0;
+    min-width: 13.75rem;
+  }
+}
+
+.how-to-play__step-image {
+  width: 13.1875rem;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 211 / 127;
+  object-fit: cover;
+}
+
+// El wireframe lo pinta pequeño y en negrita (16 bold), no como un titular.
+.how-to-play__step-title {
+  @include text-style('button');
+
+  font-weight: $font-weight-bold;
+}
+
+.how-to-play__stores {
+  gap: 0.5rem;
+}
+
+// Badges dibujados del wireframe, no los oficiales de Apple / Google (spec, pregunta 3).
+.how-to-play__store {
+  @include text-style('button');
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 3.125rem;
+  padding: 0.5rem 1.5rem;
+  color: $white;
+  text-align: left;
+  background-color: $black;
+  border-radius: 0.5rem;
+
+  &:hover,
+  &:focus {
+    color: $white;
+    text-decoration: none;
+    background-color: $brand-ink-strong;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $brand-primary;
+    outline-offset: 2px;
+  }
+}
+
+.how-to-play__store-icon {
+  flex: 0 0 auto;
+}
+
+.how-to-play__store-text {
+  padding: 0 0.5rem;
+}
+
+.how-to-play__store-kicker {
+  line-height: 1;
+}
+
+.how-to-play__store-label {
+  font-weight: $font-weight-bold;
+}

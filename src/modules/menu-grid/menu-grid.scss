@@ -1,0 +1,92 @@
+// COMPONENT · menu-grid — «Menús disponibles»: cabecera, rejilla de menús, CTA y cuenta
+// atrás opcional (Figma 8206:208). Escritorio: ítems de 227 con calle 52 / 32 (4 × 227 +
+// 3 × 52 = 1064), la fila incompleta centrada. Móvil (decisión nuestra): 2 por fila.
+// La cuenta atrás es la pieza `countdown` (Basics), con su propio CSS y JS.
+
+.menu-grid {
+  padding: 2.5rem 0;
+  background-color: $brand-surface;
+}
+
+.menu-grid__inner {
+  @include wrap;
+}
+
+.menu-grid__title {
+  @include text-style('mobile-h2');
+
+  @include media-breakpoint-up(md) {
+    @include text-style('h2');
+  }
+}
+
+.menu-grid__subtitle {
+  @include text-style('mobile-body');
+
+  @include media-breakpoint-up(md) {
+    @include text-style('body');
+  }
+}
+
+// Bootstrap 4.1.3 no trae `gap` ni calles de 52.
+.menu-grid__list {
+  gap: 1.5rem 1rem;
+
+  @include media-breakpoint-up(md) {
+    gap: 2rem 3.25rem;
+  }
+}
+
+.menu-grid__item {
+  flex: 0 0 calc((100% - 1rem) / 2);
+  min-width: 0;
+
+  @include media-breakpoint-up(md) {
+    flex-basis: 14.1875rem;
+  }
+}
+
+.menu-grid__link {
+  display: block;
+  color: inherit;
+
+  &:hover,
+  &:focus {
+    color: inherit;
+  }
+}
+
+.menu-grid__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  margin-bottom: 0.5rem;
+  object-fit: cover;
+}
+
+// El wireframe lo pinta pequeño y en negrita (16 bold), no como un titular.
+.menu-grid__name {
+  @include text-style('button');
+
+  font-weight: $font-weight-bold;
+}
+
+// Píldora 235 × 40 (4.1.3 no trae `rounded-pill`). Rejilla → CTA: 42.
+.menu-grid__cta {
+  @include text-style('button');
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-width: 14.6875rem;
+  height: 2.5rem;
+  padding: 0 1rem;
+  margin-top: 2.625rem;
+  border-radius: 50rem;
+}
+
+.menu-grid__countdown {
+  margin-top: 2.625rem;
+}

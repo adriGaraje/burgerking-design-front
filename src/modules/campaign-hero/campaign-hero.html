@@ -1,0 +1,176 @@
+<!--
+  campaign-hero · hero de la Oleada 1 (Figma 8206:99). Destino: HTML estático.
+  Generado con renderCampaignHero(VARIANTES.oleada1) de datos-campaign-hero.js: si cambias
+  uno, cambia el otro (el play lo comprueba). Lleva dentro prize-carousel (su CSS y su JS
+  viajan con el snippet). La fila de CTAs (8206:123) está oculta en el wireframe: aquí no sale.
+-->
+<section class="campaign-hero text-center" aria-labelledby="campaign-hero-title">
+  <div class="campaign-hero__inner">
+    <img
+      class="campaign-hero__logo img-fluid d-block mx-auto"
+      src="/images/roscon-king/logo-roscon-del-king.svg"
+      alt="Roscón del King"
+      width="332"
+      height="235"
+    />
+    <div class="campaign-hero__body mx-auto">
+      <h1 class="campaign-hero__title mb-0" id="campaign-hero-title">
+        Encuentra al rey<br class="d-none d-md-inline" />
+        para ganar hasta 50.000 €
+      </h1>
+      <p class="campaign-hero__text mb-0">
+        Premio de hasta 50.000 €, copy mencionando premios. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Aliquam urna purus, cursus eu felis non.
+      </p>
+    </div>
+  </div>
+  <div
+    class="prize-carousel campaign-hero__prizes"
+    id="campaign-hero-prizes"
+    role="region"
+    aria-roledescription="carousel"
+    aria-labelledby="campaign-hero-prizes-title"
+    data-prize-carousel
+  >
+    <h2 class="prize-carousel__title" id="campaign-hero-prizes-title">¿Qué puedes ganar?</h2>
+    <div class="prize-carousel__stage">
+      <div
+        class="prize-carousel__viewport"
+        id="campaign-hero-prizes-track"
+        tabindex="0"
+        data-prize-carousel-viewport
+      >
+        <ul class="prize-carousel__track list-unstyled mb-0">
+          <li class="prize-carousel__item">
+            <figure class="prize-carousel__prize mb-0">
+              <img
+                class="prize-carousel__image"
+                src="/images/roscon-king/placeholder.png"
+                alt="Imagen provisional del premio 1"
+                width="227"
+                height="227"
+                loading="lazy"
+              />
+              <figcaption class="prize-carousel__label mt-2">Premio 1</figcaption>
+            </figure>
+          </li>
+          <li class="prize-carousel__item">
+            <figure class="prize-carousel__prize mb-0">
+              <img
+                class="prize-carousel__image"
+                src="/images/roscon-king/placeholder.png"
+                alt="Imagen provisional del premio 2"
+                width="227"
+                height="227"
+                loading="lazy"
+              />
+              <figcaption class="prize-carousel__label mt-2">Premio 2</figcaption>
+            </figure>
+          </li>
+          <li class="prize-carousel__item">
+            <figure class="prize-carousel__prize mb-0">
+              <img
+                class="prize-carousel__image"
+                src="/images/roscon-king/placeholder.png"
+                alt="Imagen provisional del premio 3"
+                width="227"
+                height="227"
+                loading="lazy"
+              />
+              <figcaption class="prize-carousel__label mt-2">Premio 3</figcaption>
+            </figure>
+          </li>
+          <li class="prize-carousel__item">
+            <figure class="prize-carousel__prize mb-0">
+              <img
+                class="prize-carousel__image"
+                src="/images/roscon-king/placeholder.png"
+                alt="Imagen provisional del premio 4"
+                width="227"
+                height="227"
+                loading="lazy"
+              />
+              <figcaption class="prize-carousel__label mt-2">Premio 4</figcaption>
+            </figure>
+          </li>
+          <li class="prize-carousel__item">
+            <figure class="prize-carousel__prize mb-0">
+              <img
+                class="prize-carousel__image"
+                src="/images/roscon-king/placeholder.png"
+                alt="Imagen provisional del premio 5"
+                width="227"
+                height="227"
+                loading="lazy"
+              />
+              <figcaption class="prize-carousel__label mt-2">Premio 5</figcaption>
+            </figure>
+          </li>
+          <li class="prize-carousel__item">
+            <figure class="prize-carousel__prize mb-0">
+              <img
+                class="prize-carousel__image"
+                src="/images/roscon-king/placeholder.png"
+                alt="Imagen provisional del premio 6"
+                width="227"
+                height="227"
+                loading="lazy"
+              />
+              <figcaption class="prize-carousel__label mt-2">Premio 6</figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+      <button
+        class="prize-carousel__arrow prize-carousel__arrow--prev d-none d-md-flex"
+        type="button"
+        aria-controls="campaign-hero-prizes-track"
+        aria-label="Premio anterior"
+        data-prize-carousel-prev
+      >
+        <svg
+          class="prize-carousel__chevron"
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path
+            d="M10 3 5 8l5 5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+      <button
+        class="prize-carousel__arrow prize-carousel__arrow--next d-none d-md-flex"
+        type="button"
+        aria-controls="campaign-hero-prizes-track"
+        aria-label="Premio siguiente"
+        data-prize-carousel-next
+      >
+        <svg
+          class="prize-carousel__chevron"
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path
+            d="m6 3 5 5-5 5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>

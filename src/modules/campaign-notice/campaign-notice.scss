@@ -1,0 +1,100 @@
+// COMPONENT · campaign-notice — hero corto de aviso: texto + logo (Figma 8206:852 / 8206:541).
+// ---------------------------------------------------------------------------
+// Medidas de 1440: alto mínimo 730, padding 100 / 140 (el contenido queda 20 px por
+// encima del centro), fila centrada con 168 entre texto (559) y logo (332), 24 entre
+// titular, copy y botón. Móvil (decisión nuestra, spec §7): columna con el logo arriba
+// centrado (240) y el texto a la izquierda, padding 48 / 56, sin alto mínimo. De md a
+// xl, fila con el logo a 240 y 48 de hueco.
+// El aire de arriba suma `--burgerking-design-front-header-space`: abre las páginas de
+// Entre oleadas y Final, y la barra del sitio flota encima (gate de páginas).
+// Fondo: el gris #e0e3e4 del wireframe → `$brand-surface-alt` (crema). PROVISIONAL.
+
+.campaign-notice {
+  display: flex;
+  align-items: center;
+  padding-top: calc(3rem + var(--burgerking-design-front-header-space, 0px));
+  padding-bottom: 3.5rem;
+  background-color: $brand-surface-alt;
+  color: $brand-ink;
+
+  @include media-breakpoint-up(md) {
+    min-height: 730px;
+    padding-top: calc(6.25rem + var(--burgerking-design-front-header-space, 0px));
+    padding-bottom: 8.75rem;
+  }
+}
+
+.campaign-notice__inner {
+  @include wrap;
+}
+
+.campaign-notice__body {
+  @include media-breakpoint-up(md) {
+    flex: 0 1 559px;
+    min-width: 0;
+  }
+}
+
+// Wireframe 48 bold → h1 de la escala.
+.campaign-notice__title {
+  @include text-style('mobile-h1');
+
+  color: $brand-ink;
+
+  @include media-breakpoint-up(md) {
+    @include text-style('h1');
+  }
+}
+
+// Wireframe 20 regular → lead.
+.campaign-notice__text {
+  @include text-style('mobile-lead');
+
+  margin-top: 1.5rem;
+
+  @include media-breakpoint-up(md) {
+    @include text-style('lead');
+  }
+}
+
+// Píldora de 235 × 40 (Bootstrap 4.1.3 no trae `rounded-pill`). Mismo botón que el
+// primario de `campaign-hero`: cada snippet lleva el suyo para pegarse solo.
+.campaign-notice__cta {
+  @include text-style('button');
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 235px;
+  height: 40px;
+  margin-top: 1.5rem;
+  padding: 0 0.5rem;
+  border-radius: 50rem;
+}
+
+.campaign-notice__cta-label {
+  padding: 0 0.5rem;
+}
+
+.campaign-notice__cta-icon {
+  flex: 0 0 auto;
+}
+
+.campaign-notice__logo {
+  align-self: center;
+  width: 240px;
+  margin-bottom: 1.5rem;
+
+  // De md a lg no caben 559 + 168 + 332: el logo y el hueco se quedan en la medida
+  // móvil hasta xl (decisión nuestra).
+  @include media-breakpoint-up(md) {
+    flex: 0 0 auto;
+    margin-bottom: 0;
+    margin-left: 3rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    width: 332px;
+    margin-left: 168px;
+  }
+}

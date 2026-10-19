@@ -1,0 +1,29 @@
+import { Meta, Title, Description, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as CampaignVideo from './campaign-video.stories'
+import { CodeTabs } from '../../stories/code-tabs.jsx'
+import html from './campaign-video.html?raw'
+import scss from './campaign-video.scss?raw'
+
+<Meta of={CampaignVideo} />
+
+<Title />
+
+<Description />
+
+Copia el HTML de abajo en el CMS. El destino es **HTML estático**: no hay hooks ni JS. Para poner el
+vídeo, rellena «Embed URL» en los Controls y copia el código desde la pestaña «Code»: el póster
+se sustituye por el iframe de YouTube.
+
+<Canvas of={CampaignVideo.Default} />
+
+<Controls of={CampaignVideo.Default} />
+
+## Código
+
+<CodeTabs html={html} css={scss} />
+
+| Variable   | Qué es                                                                        |
+| ---------- | ----------------------------------------------------------------------------- |
+| `title`    | Título accesible del vídeo: `title` del iframe y nombre de la sección.        |
+| `embedUrl` | URL de YouTube (embed o enlace normal). Vacía, se ve el póster.               |
+| `poster`   | Imagen del póster mientras no hay vídeo (16:9). Vacía, fondo de marca.        |

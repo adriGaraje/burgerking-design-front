@@ -1,0 +1,39 @@
+import { Meta, Title, Description, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as Faqs from './faqs.stories'
+import { CodeTabs } from '../../stories/code-tabs.jsx'
+import html from './faqs.html?raw'
+import scss from './faqs.scss?raw'
+
+<Meta of={Faqs} />
+
+<Title />
+
+<Description />
+
+Copia el HTML de abajo en el CMS. El destino es **HTML estático**: no hay hooks, el texto va
+literal y se cambia en el CMS (o en los Controls, y se copia desde la pestaña «Code»).
+El acordeón no lleva JS propio: lo mueve el JS de Bootstrap 4, que tiene que cargar la página.
+
+<Canvas of={Faqs.Default} />
+
+<Controls of={Faqs.Default} />
+
+## Con el botón final
+
+Oculto en el wireframe; se enciende con «Show CTA».
+
+<Canvas of={Faqs.WithCta} />
+
+## Código
+
+<CodeTabs html={html} css={scss} />
+
+| Variable     | Qué es                                                                       |
+| ------------ | ---------------------------------------------------------------------------- |
+| `id`         | Prefijo de los ids del acordeón. Solo cambia si hay dos FAQ en una página.   |
+| `title`      | Titular de la sección (`h2`).                                                |
+| `subtitle`   | Entradilla. Vacía, no se pinta.                                              |
+| `items`      | Preguntas `{ question, answer }`, en orden y en cualquier número.            |
+| `singleOpen` | Una sola abierta a la vez (`data-parent`).                                   |
+| `firstOpen`  | La primera arranca abierta (`show` + `aria-expanded="true"`).                |
+| `showCta`    | Botón «Ir a preguntas frecuentes» bajo la lista (`ctaLabel`, `ctaHref`).     |

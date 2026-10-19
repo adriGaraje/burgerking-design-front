@@ -1,0 +1,23 @@
+import { Meta, Title, Description, Canvas } from '@storybook/addon-docs/blocks'
+import * as CampaignHero from './campaign-hero.stories'
+import { CodeTabs } from '../../stories/code-tabs.jsx'
+import html from './campaign-hero.html?raw'
+import scss from './campaign-hero.scss?raw'
+import carouselScss from '../../components/prize-carousel/prize-carousel.scss?raw'
+import carouselJs from '../../components/prize-carousel/prize-carousel.js?raw'
+
+<Meta of={CampaignHero} />
+
+<Title />
+
+<Description />
+
+Copia el HTML de abajo en el CMS, con su CSS y su JS. El destino es **HTML estático**: no hay
+hooks, el texto va literal y se cambia en el CMS. El snippet lleva dentro el carrusel de premios:
+el CSS y el JS de abajo ya incluyen los de `prize-carousel`.
+
+<Canvas of={CampaignHero.Default} />
+
+## Código
+
+<CodeTabs html={html} css={`${carouselScss}\n${scss}`} js={carouselJs} />

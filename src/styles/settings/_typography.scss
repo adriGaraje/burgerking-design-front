@@ -14,26 +14,37 @@
 // con `additionalData` (vite.config.js y .storybook/main.js).
 $font-path: 'fonts' !default;
 
-// Familia de marca. El `@font-face` va en generic/_fonts.scss.
-$font-family-brand:
-  system-ui,
-  -apple-system,
-  'Segoe UI',
-  'Helvetica Neue',
-  arial,
-  sans-serif;
+// Familias de marca. PROVISIONAL: Flame y Flame Sans son propietarias de Burger King y no
+// están en el repo; si la página del CMS ya las sirve, basta con nombrarlas. Sin ellas
+// pinta el fallback. Ver reports/brand-tokens/spec.md (pregunta 1).
+$font-family-display: 'Flame', 'Arial Rounded MT Bold', 'Helvetica Neue', arial, sans-serif;
+$font-family-brand: 'Flame Sans', 'Helvetica Neue', arial, sans-serif;
 
 // Pesos que usa la escala.
 $font-weight-regular: 400;
 $font-weight-bold: 700;
 
-// Escala. Cada entrada: (size, line-height, letter-spacing, weight).
-// Ejemplos: sustitúyelos por los styles de Figma.
+// Escala. Cada entrada: (size, line-height, letter-spacing, weight, familia).
+// PROVISIONAL: los styles «Desktop Latin» de la referencia Grand King (8096:19623). La
+// librería de BK no trae los móviles en estas referencias: los `mobile-*` son decisión nuestra.
+// Uso responsive: `@include text-style('mobile-h1')` y, en `media-breakpoint-up(md)`, `'h1'`.
 $type-scale: (
-  // Figma Desktop/H1 · 56/110%
-  'h1': (3.5rem, 1.1, -0.02em, $font-weight-regular),
-  // Figma Desktop/Body · 16/140%
-  'body': (1rem, 1.4, 0, $font-weight-regular),
-  // Figma Mobile/H1 · 32/120%
-  'mobile-h1': (2rem, 1.2, -0.02em, $font-weight-regular)
+  // Figma (ref.) Burger King/Hero/Desktop Latin · 48/48
+  'h1': (3rem, 1, 0, $font-weight-regular, $font-family-display),
+  // Figma (ref.) Burger King/Header One/Desktop Latin · 30/32
+  'h2': (1.875rem, 1.0667, 0, $font-weight-regular, $font-family-display),
+  // Figma (ref.) Burger King/Header Two/Desktop Latin · 24/28
+  'h3': (1.5rem, 1.1667, 0, $font-weight-regular, $font-family-display),
+  // Sin style en la referencia · Flame Sans 20/28
+  'lead': (1.25rem, 1.4, 0, $font-weight-regular, $font-family-brand),
+  // Figma (ref.) www.burgerking.es/Flame/Regular · 18/24
+  'body': (1.125rem, 1.3333, 0, $font-weight-regular, $font-family-brand),
+  // Figma (ref.) www.burgerking.es/Semantic/Link · 16/24
+  'button': (1rem, 1.5, 0, $font-weight-regular, $font-family-display),
+  // Móvil: decisión nuestra.
+  'mobile-h1': (2rem, 1.125, 0, $font-weight-regular, $font-family-display),
+  'mobile-h2': (1.5rem, 1.1667, 0, $font-weight-regular, $font-family-display),
+  'mobile-h3': (1.25rem, 1.2, 0, $font-weight-regular, $font-family-display),
+  'mobile-lead': (1.125rem, 1.4444, 0, $font-weight-regular, $font-family-brand),
+  'mobile-body': (1rem, 1.5, 0, $font-weight-regular, $font-family-brand)
 );

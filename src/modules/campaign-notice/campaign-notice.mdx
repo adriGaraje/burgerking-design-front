@@ -1,0 +1,23 @@
+import { Meta, Title, Description, Canvas } from '@storybook/addon-docs/blocks'
+import * as CampaignNotice from './campaign-notice.stories'
+import { CodeTabs } from '../../stories/code-tabs.jsx'
+import html from './campaign-notice.html?raw'
+import scss from './campaign-notice.scss?raw'
+
+<Meta of={CampaignNotice} />
+
+<Title />
+
+<Description />
+
+Copia el HTML de abajo en el CMS, con su CSS. El destino es **HTML estático**: no hay hooks, el
+texto va literal y se cambia en el CMS. El HTML es el de Entre oleadas; para el Final cambian
+solo el titular y el copy (pruébalo en Controls y copia desde la pestaña Code).
+
+<Canvas of={CampaignNotice.BetweenWaves} />
+
+<Canvas of={CampaignNotice.CampaignEnd} />
+
+## Código
+
+<CodeTabs html={html} css={scss} />

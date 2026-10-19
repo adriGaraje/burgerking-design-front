@@ -5,20 +5,16 @@ entren los correos que damos de alta.
 
 **Dos sitios, la misma build. La rama decide a cuál va:**
 
-|                      | Pre                                 | Pro                             |
-| -------------------- | ----------------------------------- | ------------------------------- |
-| **URL**              | <https://storybook-bk-pre.web.app>  | <https://storybook-bk.web.app>  |
-| **Para qué**         | verificar la entrega antes de darla | la entrega                      |
-| **Se publica desde** | `develop`                           | `main`                          |
-| **Target**           | `pre` (site `storybook-bk-pre`)     | `entrega` (site `storybook-bk`) |
-| **Comando**          | `npm run deploy`                    | `npm run deploy`                |
+|                      | Pre                                           | Pro                                        |
+| -------------------- | --------------------------------------------- | ------------------------------------------ |
+| **URL**              | <https://burgerking-design-front-pre.web.app> | <https://burgerking-design-front.web.app>  |
+| **Para qué**         | verificar la entrega antes de darla           | la entrega                                 |
+| **Se publica desde** | `develop`                                     | `main`                                     |
+| **Target**           | `pre` (site `burgerking-design-front-pre`)    | `entrega` (site `burgerking-design-front`) |
+| **Comando**          | `npm run deploy`                              | `npm run deploy`                           |
 
-Proyecto Firebase en ambos casos: **`storybook-bk`**. La única diferencia entre las dos builds es
+Proyecto Firebase en ambos casos: **`burgerking-design-front`**, en la cuenta de Garaje de Ideas. La única diferencia entre las dos builds es
 el rótulo «EN CURSO» del WIP, que se ve en pre y no en pro.
-
-> ⚠️ **PROVISIONAL.** El proyecto está creado en una **cuenta personal** (`comu.pagos@gmail.com`)
-> porque aún no hay permisos para crear proyectos en la de la empresa. Ver
-> [Migrar a la cuenta de empresa](#migrar-a-la-cuenta-de-empresa).
 
 > **El despliegue es MANUAL.** No hay GitHub Actions: un push a `develop` no publica nada.
 
@@ -26,11 +22,11 @@ el rótulo «EN CURSO» del WIP, que se ve en pre y no en pro.
 
 `npm run deploy` no pregunta a dónde. Lee la rama en la que estás y de ahí sale el destino:
 
-| Rama           | Destino                                      |
-| -------------- | -------------------------------------------- |
-| `develop`      | **pre** → <https://storybook-bk-pre.web.app> |
-| `main`         | **pro** → <https://storybook-bk.web.app>     |
-| cualquier otra | aborta y te dice por qué                     |
+| Rama           | Destino                                                 |
+| -------------- | ------------------------------------------------------- |
+| `develop`      | **pre** → <https://burgerking-design-front-pre.web.app> |
+| `main`         | **pro** → <https://burgerking-design-front.web.app>     |
+| cualquier otra | aborta y te dice por qué                                |
 
 Antes de construir nada, `scripts/deploy.mjs` comprueba dos cosas y aborta si fallan:
 
@@ -83,16 +79,8 @@ Al publicar desde `main` se crea el tag `entrega/AAAA-MM-DD` (no se empuja solo)
 > ⚠️ La puerta es de UI: un asset es técnicamente descargable por URL directa. Suficiente para el
 > handoff de diseños.
 
-## Migrar a la cuenta de empresa
+## Historia
 
-Cuando haya permisos:
-
-1. Crear el proyecto nuevo y sus dos sitios (`firebase projects:create`,
-   `firebase hosting:sites:create`). Los IDs de sitio son únicos en todo Firebase: si se quieren
-   conservar `storybook-bk` / `storybook-bk-pre`, primero hay que borrarlos del proyecto personal.
-2. `firebase apps:create WEB` + `firebase apps:sdkconfig WEB <appId>` → pegar en
-   `auth/firebase-config.js`.
-3. `.firebaserc`: proyecto por defecto y `firebase target:apply hosting entrega|pre <site>`.
-4. `config.json → deploy`: proyecto, sitios y URLs.
-5. Activar Email/Password y volver a dar de alta los usuarios (no se migran solos).
-6. `firebase login:use <cuenta de empresa>` en la carpeta del repo y desplegar las dos ramas.
+El 19-10-2026, durante unas horas, el Storybook vivió en un proyecto provisional de una cuenta personal
+(`storybook-bk`), mientras IT daba permisos. Ese proyecto se ha borrado: los enlaces a
+`storybook-bk*.web.app` ya no funcionan.

@@ -1,0 +1,429 @@
+{
+  "generado": "2026-10-19T10:19:30.975Z",
+  "build": ".sb-pixel (BURGERKING_DESIGN_FRONT_STORYBOOK_TODO=1)",
+  "paginas": {
+    "wave-1": {
+      "story": "pages-roscon-king-wave-1--default",
+      "w1440": {
+        "preparacion": {
+          "montada": true,
+          "errorDisplay": false,
+          "imagenes": 23,
+          "rotas": [],
+          "pendientes": []
+        },
+        "viewport": 1440,
+        "alturaDocumento": 4341,
+        "header": {
+          "el": "header.header-bk",
+          "position": "relative",
+          "y": 0,
+          "h": 74,
+          "x": 0,
+          "w": 1440
+        },
+        "main": {
+          "y": 74,
+          "h": 3464,
+          "x": 0,
+          "w": 1440,
+          "hijos": [
+            {
+              "el": "section.campaign-hero.text-center",
+              "y": 74,
+              "h": 994,
+              "x": 0,
+              "w": 1440
+            },
+            {
+              "el": "section.how-to-play",
+              "y": 1068,
+              "h": 586,
+              "x": 0,
+              "w": 1440
+            },
+            {
+              "el": "section.qr-access",
+              "y": 1654,
+              "h": 312,
+              "x": 0,
+              "w": 1440
+            },
+            {
+              "el": "section.menu-grid",
+              "y": 1966,
+              "h": 808,
+              "x": 0,
+              "w": 1440
+            },
+            {
+              "el": "section.faqs",
+              "y": 2774,
+              "h": 661,
+              "x": 0,
+              "w": 1440
+            },
+            {
+              "el": "nav.legal-links",
+              "y": 3434,
+              "h": 104,
+              "x": 0,
+              "w": 1440
+            }
+          ]
+        },
+        "footer": {
+          "el": "footer.footer-bk",
+          "y": 3538,
+          "h": 803,
+          "x": 0,
+          "w": 1440
+        },
+        "clientOwned": [
+          {
+            "el": "header.header-bk",
+            "y": 0,
+            "h": 74,
+            "x": 0,
+            "w": 1440
+          },
+          {
+            "el": "footer.footer-bk",
+            "y": 3538,
+            "h": 803,
+            "x": 0,
+            "w": 1440
+          }
+        ]
+      },
+      "w390": {
+        "preparacion": {
+          "montada": true,
+          "errorDisplay": false,
+          "imagenes": 23,
+          "rotas": [],
+          "pendientes": []
+        },
+        "viewport": 390,
+        "docScrollWidth": 390,
+        "bodyScrollWidth": 390,
+        "alturaDocumento": 5902,
+        "scrollXTrasScrollTo": 0,
+        "cajasFueraDelViewport": [
+          "ul.prize-carousel__track.list-unstyled.mb-0 [-352..918]",
+          "li.prize-carousel__item.prize-carousel__item--dimmed [-237..-77]",
+          "figure.prize-carousel__prize.mb-0 [-237..-77]",
+          "img.prize-carousel__image [-237..-77]",
+          "figcaption.prize-carousel__label.mt-2 [-237..-77]",
+          "li.prize-carousel__item.prize-carousel__item--dimmed [-61..99]",
+          "figure.prize-carousel__prize.mb-0 [-61..99]",
+          "img.prize-carousel__image [-61..99]",
+          "figcaption.prize-carousel__label.mt-2 [-61..99]",
+          "li.prize-carousel__item.prize-carousel__item--dimmed [291..451]",
+          "figure.prize-carousel__prize.mb-0 [291..451]",
+          "img.prize-carousel__image [291..451]"
+        ],
+        "cajasFueraTotal": 21
+      }
+    },
+    "wave-2": {
+      "story": "pages-roscon-king-wave-2--default",
+      "w1440": {
+        "preparacion": {
+          "montada": true,
+          "errorDisplay": false,
+          "imagenes": 23,
+          "rotas": [],
+          "pendientes": []
+        },
+        "viewport": 1440,
+        "alturaDocumento": 4341,
+        "header": {
+          "el": "header.header-bk",
+          "position": "relative",
+          "y": 0,
+          "h": 74,
+          "x": 0,
+          "w": 1440
+        },
+        "main": {
+          "y": 74,
+          "h": 3464,
+          "x": 0,
+          "w": 1440,
+          "hijos": [
+            {
+              "el": "section.campaign-hero.text-center",
+              "y": 74,
+              "h": 994,
+              "x": 0,
+              "w": 1440
+            },
+            {
+              "el": "section.how-to-play",
+              "y": 1068,
+              "h": 586,
+              "x": 0,
+              "w": 1440
+            },
+            {
+              "el": "section.qr-access",
+              "y": 1654,
+              "h": 312,
+              "x": 0,
+              "w": 1440
+            },
+            {
+              "el": "section.menu-grid",
+              "y": 1966,
+              "h": 808,
+              "x": 0,
+              "w": 1440
+            },
+            {
+              "el": "section.faqs",
+              "y": 2774,
+              "h": 661,
+              "x": 0,
+              "w": 1440
+            },
+            {
+              "el": "nav.legal-links",
+              "y": 3434,
+              "h": 104,
+              "x": 0,
+              "w": 1440
+            }
+          ]
+        },
+        "footer": {
+          "el": "footer.footer-bk",
+          "y": 3538,
+          "h": 803,
+          "x": 0,
+          "w": 1440
+        },
+        "clientOwned": [
+          {
+            "el": "header.header-bk",
+            "y": 0,
+            "h": 74,
+            "x": 0,
+            "w": 1440
+          },
+          {
+            "el": "footer.footer-bk",
+            "y": 3538,
+            "h": 803,
+            "x": 0,
+            "w": 1440
+          }
+        ]
+      },
+      "w390": {
+        "preparacion": {
+          "montada": true,
+          "errorDisplay": false,
+          "imagenes": 23,
+          "rotas": [],
+          "pendientes": []
+        },
+        "viewport": 390,
+        "docScrollWidth": 390,
+        "bodyScrollWidth": 390,
+        "alturaDocumento": 5902,
+        "scrollXTrasScrollTo": 0,
+        "cajasFueraDelViewport": [
+          "ul.prize-carousel__track.list-unstyled.mb-0 [-352..918]",
+          "li.prize-carousel__item.prize-carousel__item--dimmed [-237..-77]",
+          "figure.prize-carousel__prize.mb-0 [-237..-77]",
+          "img.prize-carousel__image [-237..-77]",
+          "figcaption.prize-carousel__label.mt-2 [-237..-77]",
+          "li.prize-carousel__item.prize-carousel__item--dimmed [-61..99]",
+          "figure.prize-carousel__prize.mb-0 [-61..99]",
+          "img.prize-carousel__image [-61..99]",
+          "figcaption.prize-carousel__label.mt-2 [-61..99]",
+          "li.prize-carousel__item.prize-carousel__item--dimmed [291..451]",
+          "figure.prize-carousel__prize.mb-0 [291..451]",
+          "img.prize-carousel__image [291..451]"
+        ],
+        "cajasFueraTotal": 21
+      }
+    },
+    "coming-soon": {
+      "story": "pages-roscon-king-coming-soon--default",
+      "w1440": {
+        "preparacion": {
+          "montada": true,
+          "errorDisplay": false,
+          "imagenes": 3,
+          "rotas": [],
+          "pendientes": []
+        },
+        "viewport": 1440,
+        "alturaDocumento": 1711,
+        "header": {
+          "el": "header.header-bk",
+          "position": "relative",
+          "y": 0,
+          "h": 74,
+          "x": 0,
+          "w": 1440
+        },
+        "main": {
+          "y": 74,
+          "h": 834,
+          "x": 0,
+          "w": 1440,
+          "hijos": [
+            {
+              "el": "section.campaign-notice",
+              "y": 74,
+              "h": 730,
+              "x": 0,
+              "w": 1440
+            },
+            {
+              "el": "nav.legal-links",
+              "y": 804,
+              "h": 104,
+              "x": 0,
+              "w": 1440
+            }
+          ]
+        },
+        "footer": {
+          "el": "footer.footer-bk",
+          "y": 908,
+          "h": 803,
+          "x": 0,
+          "w": 1440
+        },
+        "clientOwned": [
+          {
+            "el": "header.header-bk",
+            "y": 0,
+            "h": 74,
+            "x": 0,
+            "w": 1440
+          },
+          {
+            "el": "footer.footer-bk",
+            "y": 908,
+            "h": 803,
+            "x": 0,
+            "w": 1440
+          }
+        ]
+      },
+      "w390": {
+        "preparacion": {
+          "montada": true,
+          "errorDisplay": false,
+          "imagenes": 3,
+          "rotas": [],
+          "pendientes": []
+        },
+        "viewport": 390,
+        "docScrollWidth": 390,
+        "bodyScrollWidth": 390,
+        "alturaDocumento": 1938,
+        "scrollXTrasScrollTo": 0,
+        "cajasFueraDelViewport": [],
+        "cajasFueraTotal": 0
+      }
+    },
+    "winners": {
+      "story": "pages-roscon-king-winners--default",
+      "w1440": {
+        "preparacion": {
+          "montada": true,
+          "errorDisplay": false,
+          "imagenes": 3,
+          "rotas": [],
+          "pendientes": []
+        },
+        "viewport": 1440,
+        "alturaDocumento": 1711,
+        "header": {
+          "el": "header.header-bk",
+          "position": "relative",
+          "y": 0,
+          "h": 74,
+          "x": 0,
+          "w": 1440
+        },
+        "main": {
+          "y": 74,
+          "h": 834,
+          "x": 0,
+          "w": 1440,
+          "hijos": [
+            {
+              "el": "section.campaign-notice",
+              "y": 74,
+              "h": 730,
+              "x": 0,
+              "w": 1440
+            },
+            {
+              "el": "nav.legal-links",
+              "y": 804,
+              "h": 104,
+              "x": 0,
+              "w": 1440
+            }
+          ]
+        },
+        "footer": {
+          "el": "footer.footer-bk",
+          "y": 908,
+          "h": 803,
+          "x": 0,
+          "w": 1440
+        },
+        "clientOwned": [
+          {
+            "el": "header.header-bk",
+            "y": 0,
+            "h": 74,
+            "x": 0,
+            "w": 1440
+          },
+          {
+            "el": "footer.footer-bk",
+            "y": 908,
+            "h": 803,
+            "x": 0,
+            "w": 1440
+          }
+        ]
+      },
+      "w390": {
+        "preparacion": {
+          "montada": true,
+          "errorDisplay": false,
+          "imagenes": 3,
+          "rotas": [],
+          "pendientes": []
+        },
+        "viewport": 390,
+        "docScrollWidth": 390,
+        "bodyScrollWidth": 390,
+        "alturaDocumento": 1964,
+        "scrollXTrasScrollTo": 0,
+        "cajasFueraDelViewport": [],
+        "cajasFueraTotal": 0
+      }
+    }
+  },
+  "controlConsola": true,
+  "consola": {
+    "control": [
+      "error: control-ojo"
+    ],
+    "wave-1@1440": [
+      "log-error: Failed to load resource: the server responded with a status of 404 (Not Found) http://127.0.0.1:57544/favicon.ico"
+    ]
+  }
+}

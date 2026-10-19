@@ -1,16 +1,12 @@
 {
   "projects": {
-    "default": "storybook-bk"
+    "default": "burgerking-design-front"
   },
   "targets": {
-    "storybook-bk": {
+    "burgerking-design-front": {
       "hosting": {
-        "entrega": [
-          "storybook-bk"
-        ],
-        "pre": [
-          "storybook-bk-pre"
-        ]
+        "entrega": ["burgerking-design-front"],
+        "pre": ["burgerking-design-front-pre"]
       }
     }
   },

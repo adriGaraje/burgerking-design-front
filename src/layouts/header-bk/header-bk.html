@@ -1,0 +1,55 @@
+<!--
+  Layout header-bk — cabecera de burgerking.es (Figma 8206:98). NO es nuestra: la pone Burger King.
+  Marcado de REFERENCIA, solo para Storybook. En el código publicado va <header-bk></header-bk>.
+-->
+<header
+  class="header-bk"
+  data-module="site-header"
+  data-burgerking-design-front-client-owned="header-bk"
+>
+  <div class="header-bk__bar d-flex align-items-center justify-content-between">
+    <nav class="header-bk__nav d-flex align-items-center" aria-label="Principal">
+      <button class="header-bk__burger" type="button" aria-label="Menú">
+        <svg class="header-bk__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z" fill="currentColor" />
+        </svg>
+      </button>
+      <ul class="header-bk__links list-unstyled d-none d-xl-flex align-items-center mb-0">
+        <li><a class="header-bk__link" href="#">Pide ahora</a></li>
+        <li><a class="header-bk__link" href="#">Cupones y ofertas</a></li>
+        <li><a class="header-bk__link" href="#">Restaurantes</a></li>
+        <li><a class="header-bk__link" href="#">Descubre</a></li>
+      </ul>
+    </nav>
+    <a class="header-bk__logo" href="#">
+      <img src="/images/roscon-king/logo-bk.svg" alt="Burger King" width="55" height="56" />
+    </a>
+    <div class="header-bk__actions d-flex align-items-center">
+      <div class="header-bk__delivery d-none d-xl-flex align-items-center">
+        <svg class="header-bk__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path
+            d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"
+            fill="currentColor"
+          />
+        </svg>
+        <span class="header-bk__delivery-label">A domicilio o recoger</span>
+        <a class="header-bk__delivery-action" href="#">Selecciona</a>
+      </div>
+      <a class="header-bk__pill header-bk__pill--outline d-none d-sm-inline-flex" href="#">
+        <svg class="header-bk__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M3 7l4.5 4L12 5l4.5 6L21 7l-2 11H5L3 7Z" fill="currentColor" />
+        </svg>
+        <span>0</span>
+      </a>
+      <a class="header-bk__pill header-bk__pill--solid" href="#">
+        <svg class="header-bk__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path
+            d="M7 8V7a5 5 0 0 1 10 0v1h3v13H4V8h3Zm2 0h6V7a3 3 0 0 0-6 0v1Z"
+            fill="currentColor"
+          />
+        </svg>
+        <span>0,00 €</span>
+      </a>
+    </div>
+  </div>
+</header>

@@ -10,7 +10,14 @@
 //  Ver docs/design-tokens.md.
 // =============================================================================
 
-// Ejemplos: sustitúyelos por los de Figma.
-$color-primary: #0d6efd; // Figma: Primarios/Principal
-$color-neutral-black: #111; // Figma: Neutrales/Negro
-$color-neutral-white: #fff; // Figma: Neutrales/Blanco
+// PROVISIONAL: salen de las landings de referencia de BK (página References del Figma,
+// Grand King `8096:19623`), no del diseño del Roscón, que hoy es un wireframe gris.
+// Ver docs/burgerking-design-front-harness/reports/brand-tokens/spec.md.
+$color-bk-bbq-brown: #502314; // Figma: Burger King/Primary/BBQ Brown
+$color-bk-bbq-brown-darken: #421a0b; // Figma: Brand Extended/Burger King/Darken/BBQ Brown Darken
+$color-bk-fiery-red: #d62300; // Figma: Burger King/Primary/Fiery Red
+$color-bk-fiery-red-darken: #8a1600; // Figma: Brand Extended/Burger King/Darken/Fiery Red Darken
+$color-bk-mayo-egg-white: #f5ebdc; // Figma: Burger King/Secondary/Mayo Egg White
+$color-bk-melty-yellow: #fa0; // Figma: Burger King/Secondary/Melty Yellow
+$color-neutral-white: #fff; // Figma: Functional/Utility/White
+$color-neutral-black: #000; // Figma: Functional/Utility/Black

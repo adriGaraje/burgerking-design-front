@@ -1,0 +1,23 @@
+import { Meta, Title, Description, Canvas } from '@storybook/addon-docs/blocks'
+import * as PrizeCarousel from './prize-carousel.stories'
+import { CodeTabs } from '../../stories/code-tabs.jsx'
+import html from './prize-carousel.html?raw'
+import scss from './prize-carousel.scss?raw'
+import js from './prize-carousel.js?raw'
+
+<Meta of={PrizeCarousel} />
+
+<Title />
+
+<Description />
+
+Copia el HTML de abajo en el CMS, con su CSS y su JS. El destino es **HTML estático**: no hay
+hooks, el texto va literal y se cambia en el CMS. Para más o menos premios, repite o quita un
+`<li class="prize-carousel__item">`. Si hay dos carruseles en la misma página, cambia el `id`
+(y los que salen de él: `-title` y `-track`).
+
+<Canvas of={PrizeCarousel.Default} />
+
+## Código
+
+<CodeTabs html={html} css={scss} js={js} />
