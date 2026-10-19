@@ -3,6 +3,7 @@
 import { expect, within } from 'storybook/test'
 import html from './footer-bk.html?raw'
 import { sinComentarios } from '../../stories/lib/hooks.js'
+import { avisoCliente } from '../../stories/lib/aviso-cliente.js'
 import { DATOS, renderFooterBk } from './datos-footer-bk.js'
 
 const ETIQUETA = '<footer-bk></footer-bk>'
@@ -15,7 +16,9 @@ const normaliza = (s) =>
 
 export default {
   title: 'Layouts/Footer Bk',
-  tags: ['WIP'],
+  // `client-owned`: pieza del cliente; la barra lateral le pone «CLIENTE» (manager.jsx).
+  tags: ['WIP', 'client-owned'],
+  decorators: [avisoCliente('footer-bk')],
   render: () => renderFooterBk(DATOS),
   parameters: {
     layout: 'fullscreen',

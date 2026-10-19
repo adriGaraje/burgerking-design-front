@@ -7,7 +7,7 @@ import { limpiaFuente } from '../../.storybook/limpia-fuente.js'
 export const SNIPPETS = {
   'campaign-hero': 'Campaign Hero',
   'how-to-play': 'How To Play',
-  'qr-access': 'Qr Access',
+  'qr-access': 'QR Access',
   'menu-grid': 'Menu Grid',
   'campaign-video': 'Campaign Video',
   faqs: 'Faqs',

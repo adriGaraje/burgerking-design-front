@@ -90,6 +90,8 @@ export const limpiaFuente = (fuente) => {
 
   // Estén donde estén: `sobreHero` envuelve por fuera, pero nada impide que un
   // día alguien marque algo por dentro.
+  // La franja «pieza del cliente» (src/stories/lib/aviso-cliente.js) es solo del canvas.
+  cuerpo.querySelectorAll('[data-burgerking-design-front-client-note]').forEach((el) => el.remove())
   cuerpo.querySelectorAll('[data-burgerking-design-front-preview]').forEach(desenvuelve)
 
   // Piezas del cliente (cabecera y footer de burgerking.es): se pintan para que la

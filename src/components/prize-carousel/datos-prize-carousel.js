@@ -29,7 +29,9 @@ export const VARIANTES = {
     // Propuesta nuestra (spec §4: el nodo no los trae).
     prevLabel: 'Premio anterior',
     nextLabel: 'Premio siguiente',
-    items: [1, 2, 3, 4, 5, 6].map(premio),
+    // El wireframe trae 6; los premios 7 a 10 se añaden (mismo relleno) para que el
+    // carrusel tenga recorrido a 1440 y se vea cómo se mueve.
+    items: Array.from({ length: 10 }, (_, i) => premio(i + 1)),
   },
 }
 
