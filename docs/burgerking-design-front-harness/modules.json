@@ -9,5 +9,182 @@
     "blocked",
     "done"
   ],
-  "modules": []
+  "modules": [
+    {
+      "slug": "campaign-hero",
+      "tier": "module",
+      "figmaNode": "8206:99",
+      "fileKey": "HBpZap8ASqhsHPCTpe7OMN",
+      "pipelineState": "in-review",
+      "tag": "WIP",
+      "fuente": "wireframe (sin diseño visual)",
+      "spec": "docs/burgerking-design-front-harness/reports/campaign-hero/spec.md",
+      "updated": "2026-10-19"
+    },
+    {
+      "slug": "how-to-play",
+      "tier": "module",
+      "figmaNode": "8206:159",
+      "fileKey": "HBpZap8ASqhsHPCTpe7OMN",
+      "pipelineState": "in-review",
+      "tag": "WIP",
+      "fuente": "wireframe (sin diseño visual)",
+      "spec": "docs/burgerking-design-front-harness/reports/how-to-play/spec.md",
+      "updated": "2026-10-19"
+    },
+    {
+      "slug": "qr-access",
+      "tier": "module",
+      "figmaNode": "8206:193",
+      "fileKey": "HBpZap8ASqhsHPCTpe7OMN",
+      "pipelineState": "in-review",
+      "tag": "WIP",
+      "fuente": "wireframe (sin diseño visual)",
+      "spec": "docs/burgerking-design-front-harness/reports/qr-access/spec.md",
+      "updated": "2026-10-19"
+    },
+    {
+      "slug": "menu-grid",
+      "tier": "module",
+      "figmaNode": "8206:208",
+      "fileKey": "HBpZap8ASqhsHPCTpe7OMN",
+      "pipelineState": "in-review",
+      "tag": "WIP",
+      "fuente": "wireframe (sin diseño visual)",
+      "spec": "docs/burgerking-design-front-harness/reports/menu-grid/spec.md",
+      "updated": "2026-10-19"
+    },
+    {
+      "slug": "campaign-video",
+      "tier": "module",
+      "figmaNode": "8206:250",
+      "fileKey": "HBpZap8ASqhsHPCTpe7OMN",
+      "pipelineState": "in-review",
+      "tag": "WIP",
+      "fuente": "wireframe (sin diseño visual)",
+      "spec": "docs/burgerking-design-front-harness/reports/campaign-video/spec.md",
+      "updated": "2026-10-19"
+    },
+    {
+      "slug": "faqs",
+      "tier": "module",
+      "figmaNode": "8206:253",
+      "fileKey": "HBpZap8ASqhsHPCTpe7OMN",
+      "pipelineState": "in-review",
+      "tag": "WIP",
+      "fuente": "wireframe (sin diseño visual)",
+      "spec": "docs/burgerking-design-front-harness/reports/faqs/spec.md",
+      "updated": "2026-10-19"
+    },
+    {
+      "slug": "legal-links",
+      "tier": "module",
+      "figmaNode": "8206:295",
+      "fileKey": "HBpZap8ASqhsHPCTpe7OMN",
+      "pipelineState": "in-review",
+      "tag": "WIP",
+      "fuente": "wireframe (sin diseño visual)",
+      "spec": "docs/burgerking-design-front-harness/reports/legal-links/spec.md",
+      "updated": "2026-10-19"
+    },
+    {
+      "slug": "campaign-notice",
+      "tier": "module",
+      "figmaNode": "8206:852",
+      "fileKey": "HBpZap8ASqhsHPCTpe7OMN",
+      "pipelineState": "in-review",
+      "tag": "WIP",
+      "fuente": "wireframe (sin diseño visual)",
+      "spec": "docs/burgerking-design-front-harness/reports/campaign-notice/spec.md",
+      "updated": "2026-10-19"
+    },
+    {
+      "slug": "prize-carousel",
+      "tier": "component",
+      "figmaNode": "8206:134",
+      "fileKey": "HBpZap8ASqhsHPCTpe7OMN",
+      "pipelineState": "in-review",
+      "tag": "WIP",
+      "fuente": "wireframe (sin diseño visual)",
+      "spec": "docs/burgerking-design-front-harness/reports/prize-carousel/spec.md",
+      "updated": "2026-10-19"
+    },
+    {
+      "slug": "countdown",
+      "tier": "component",
+      "figmaNode": "8206:242",
+      "fileKey": "HBpZap8ASqhsHPCTpe7OMN",
+      "pipelineState": "in-review",
+      "tag": "WIP",
+      "fuente": "wireframe (sin diseño visual)",
+      "spec": "docs/burgerking-design-front-harness/reports/countdown/spec.md",
+      "updated": "2026-10-19"
+    },
+    {
+      "slug": "header-bk",
+      "tier": "layout",
+      "figmaNode": "8206:98",
+      "fileKey": "HBpZap8ASqhsHPCTpe7OMN",
+      "pipelineState": "in-review",
+      "tag": "WIP",
+      "fuente": "wireframe (sin diseño visual)",
+      "spec": "docs/burgerking-design-front-harness/reports/header-bk/spec.md",
+      "updated": "2026-10-19"
+    },
+    {
+      "slug": "footer-bk",
+      "tier": "layout",
+      "figmaNode": "8206:300",
+      "fileKey": "HBpZap8ASqhsHPCTpe7OMN",
+      "pipelineState": "in-review",
+      "tag": "WIP",
+      "fuente": "wireframe (sin diseño visual)",
+      "spec": "docs/burgerking-design-front-harness/reports/footer-bk/spec.md",
+      "updated": "2026-10-19"
+    },
+    {
+      "slug": "roscon-king-wave-1",
+      "tier": "page",
+      "figmaNode": "8206:97",
+      "fileKey": "HBpZap8ASqhsHPCTpe7OMN",
+      "pipelineState": "in-review",
+      "tag": "WIP",
+      "fuente": "wireframe (sin diseño visual)",
+      "spec": "docs/burgerking-design-front-harness/reports/roscon-king-pages/pixel-check.md",
+      "updated": "2026-10-19"
+    },
+    {
+      "slug": "roscon-king-wave-2",
+      "tier": "page",
+      "figmaNode": "8206:634",
+      "fileKey": "HBpZap8ASqhsHPCTpe7OMN",
+      "pipelineState": "in-review",
+      "tag": "WIP",
+      "fuente": "wireframe (sin diseño visual)",
+      "spec": "docs/burgerking-design-front-harness/reports/roscon-king-pages/pixel-check.md",
+      "updated": "2026-10-19"
+    },
+    {
+      "slug": "roscon-king-coming-soon",
+      "tier": "page",
+      "figmaNode": "8206:850",
+      "fileKey": "HBpZap8ASqhsHPCTpe7OMN",
+      "pipelineState": "in-review",
+      "tag": "WIP",
+      "fuente": "wireframe (sin diseño visual)",
+      "spec": "docs/burgerking-design-front-harness/reports/roscon-king-pages/pixel-check.md",
+      "updated": "2026-10-19"
+    },
+    {
+      "slug": "roscon-king-winners",
+      "tier": "page",
+      "figmaNode": "8206:539",
+      "fileKey": "HBpZap8ASqhsHPCTpe7OMN",
+      "pipelineState": "in-review",
+      "tag": "WIP",
+      "fuente": "wireframe (sin diseño visual)",
+      "spec": "docs/burgerking-design-front-harness/reports/roscon-king-pages/pixel-check.md",
+      "updated": "2026-10-19"
+    }
+  ]
 }

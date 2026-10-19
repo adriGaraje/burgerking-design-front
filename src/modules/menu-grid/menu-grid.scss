@@ -65,12 +65,11 @@
   object-fit: cover;
 }
 
+// El wireframe lo pinta pequeño y en negrita (16 bold), no como un titular.
 .menu-grid__name {
-  @include text-style('mobile-h3');
+  @include text-style('button');
 
-  @include media-breakpoint-up(md) {
-    @include text-style('h3');
-  }
+  font-weight: $font-weight-bold;
 }
 
 // Píldora 235 × 40 (4.1.3 no trae `rounded-pill`). Rejilla → CTA: 42.
