@@ -1,0 +1,141 @@
+// COMPONENT · header-bk — cabecera de burgerking.es. NO es nuestra: la pone Burger King.
+// Referencia visual aproximada (sin perseguir el píxel) para ver la página completa;
+// en el código publicado sale como `<header-bk></header-bk>`.
+// Medidas de la captura del wireframe (1440 × 74). Colores: los de marca, no los grises.
+.header-bk {
+  position: relative;
+  background-color: $brand-surface;
+  color: $brand-ink;
+}
+
+.header-bk__bar {
+  position: relative;
+  height: 64px;
+  padding: 0 16px;
+
+  @include media-breakpoint-up(md) {
+    height: 74px;
+    padding: 0 36px;
+  }
+}
+
+.header-bk__icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+}
+
+.header-bk__burger {
+  display: inline-flex;
+  padding: 4px;
+  margin-right: 12px;
+  color: inherit;
+  cursor: pointer;
+  background: none;
+  border: 0;
+
+  .header-bk__icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.header-bk__links {
+  gap: 20px;
+}
+
+.header-bk__link {
+  @include text-style('button');
+
+  font-size: 1.125rem;
+  font-weight: $font-weight-bold;
+  color: inherit;
+
+  &:hover,
+  &:focus {
+    color: $brand-primary;
+    text-decoration: none;
+  }
+}
+
+// Centrado en la barra, no entre los dos grupos.
+.header-bk__logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  transform: translate(-50%, -50%);
+
+  img {
+    display: block;
+    width: auto;
+    height: 44px;
+
+    @include media-breakpoint-up(md) {
+      height: 56px;
+    }
+  }
+}
+
+.header-bk__actions {
+  gap: 14px;
+}
+
+.header-bk__delivery {
+  gap: 8px;
+}
+
+.header-bk__delivery-label {
+  @include text-style('button');
+
+  font-size: 1.125rem;
+  font-weight: $font-weight-bold;
+}
+
+.header-bk__delivery-action {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.header-bk__pill {
+  @include text-style('button');
+
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  height: 31px;
+  padding: 0 14px;
+  font-weight: $font-weight-bold;
+  border: 1px solid transparent;
+  border-radius: 50rem;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  .header-bk__icon {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.header-bk__pill--outline {
+  color: $brand-ink;
+  border-color: rgba($brand-ink, 0.3);
+
+  &:hover,
+  &:focus {
+    color: $brand-ink;
+  }
+}
+
+.header-bk__pill--solid {
+  color: $brand-on-primary;
+  background-color: $brand-ink;
+
+  &:hover,
+  &:focus {
+    color: $brand-on-primary;
+  }
+}

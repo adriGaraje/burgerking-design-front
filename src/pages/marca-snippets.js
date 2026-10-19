@@ -4,7 +4,16 @@
 import { expect } from 'storybook/test'
 import { limpiaFuente } from '../../.storybook/limpia-fuente.js'
 
-export const SNIPPETS = {}
+export const SNIPPETS = {
+  'campaign-hero': 'Campaign Hero',
+  'how-to-play': 'How To Play',
+  'qr-access': 'Qr Access',
+  'menu-grid': 'Menu Grid',
+  'campaign-video': 'Campaign Video',
+  faqs: 'Faqs',
+  'legal-links': 'Legal Links',
+  'campaign-notice': 'Campaign Notice',
+}
 
 const piezasDe = (raiz) => [...(raiz.querySelector('main')?.children ?? [])]
 const nombreDe = (pieza) => SNIPPETS[pieza.classList[0]]

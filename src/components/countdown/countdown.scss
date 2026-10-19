@@ -1,0 +1,65 @@
+// COMPONENT · countdown — cuenta atrás «Quedan X días X horas X minutos X segundos»
+// (Figma 8206:242, especificada en reports/menu-grid/spec.md §1b).
+// Escritorio: caja hug 524 = 16 + 4 × 105 + 3 × 24 + 16, gap 12 entre etiqueta y caja.
+// Móvil (decisión nuestra): la caja ocupa el ancho y las cuatro celdas se reparten a partes iguales.
+// Caja: el gris #eff1f3 del wireframe pasa a la crema de marca (provisional).
+
+.countdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.countdown__label {
+  @include text-style('mobile-h3');
+
+  @include media-breakpoint-up(md) {
+    @include text-style('h3');
+  }
+}
+
+.countdown__box {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 1rem;
+  background-color: $brand-surface-alt;
+  border-radius: $border-radius;
+
+  @include media-breakpoint-up(md) {
+    gap: 1.5rem;
+    width: auto;
+  }
+}
+
+.countdown__unit {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  min-width: 0;
+
+  @include media-breakpoint-up(md) {
+    flex: 0 0 6.5625rem;
+  }
+}
+
+.countdown__value {
+  @include text-style('mobile-h2');
+
+  font-variant-numeric: tabular-nums;
+
+  @include media-breakpoint-up(md) {
+    @include text-style('h2');
+  }
+}
+
+.countdown__name {
+  @include text-style('mobile-body');
+
+  @include media-breakpoint-up(md) {
+    @include text-style('body');
+  }
+}

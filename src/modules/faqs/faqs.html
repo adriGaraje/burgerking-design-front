@@ -1,0 +1,226 @@
+<!--
+  Snippet faqs — acordeón de preguntas frecuentes (Figma 8206:253).
+  HTML estático: es renderFaqs(VARIANTES.oleada1) de datos-faqs.js. Lorem del wireframe.
+  Collapse de Bootstrap 4 por data-api, sin JS propio (jQuery + bootstrap.js en la página).
+  data-parent → una sola abierta a la vez; quítalo de los paneles para abrir varias.
+-->
+<section class="faqs" aria-labelledby="faqs-title">
+  <div class="faqs__inner">
+    <div class="faqs__header text-center">
+      <h2 class="faqs__title" id="faqs-title">¿Tienes alguna duda?</h2>
+      <p class="faqs__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div class="faqs__list" id="faqs-accordion">
+      <div class="faqs__item">
+        <h3 class="faqs__heading">
+          <button
+            class="faqs__question"
+            id="faqs-question-1"
+            type="button"
+            data-toggle="collapse"
+            data-target="#faqs-panel-1"
+            aria-expanded="true"
+            aria-controls="faqs-panel-1"
+          >
+            <span class="faqs__question-text">Lorem ipsum dolor sit amet?</span>
+            <svg
+              class="faqs__icon"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M11.06 5.53 8 8.58 4.94 5.53 4 6.47l4 4 4-4-.94-.94Z" fill="currentColor" />
+            </svg>
+          </button>
+        </h3>
+        <div
+          class="collapse show faqs__panel"
+          id="faqs-panel-1"
+          role="region"
+          aria-labelledby="faqs-question-1"
+          data-parent="#faqs-accordion"
+        >
+          <div class="faqs__answer">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed sapien orci.
+            Praesent ac est ut magna lobortis posuere sodales vitae risus. Maecenas luctus dui
+            magna, quis hendrerit tortor vulputate eu. Nunc eu ornare dui, non cursus mi. Aenean
+            condimentum lorem id nibh lacinia congue. Donec ac pharetra risus. Sed risus odio,
+            posuere vitae gravida a, feugiat eu eros. Donec lectus libero, imperdiet vitae porta
+            sed, rutrum quis velit. Nulla aliquam aliquam dui non accumsan. Donec tincidunt cursus
+            massa quis feugiat.
+          </div>
+        </div>
+      </div>
+      <div class="faqs__item">
+        <h3 class="faqs__heading">
+          <button
+            class="faqs__question collapsed"
+            id="faqs-question-2"
+            type="button"
+            data-toggle="collapse"
+            data-target="#faqs-panel-2"
+            aria-expanded="false"
+            aria-controls="faqs-panel-2"
+          >
+            <span class="faqs__question-text">Lorem ipsum dolor sit amet?</span>
+            <svg
+              class="faqs__icon"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M11.06 5.53 8 8.58 4.94 5.53 4 6.47l4 4 4-4-.94-.94Z" fill="currentColor" />
+            </svg>
+          </button>
+        </h3>
+        <div
+          class="collapse faqs__panel"
+          id="faqs-panel-2"
+          role="region"
+          aria-labelledby="faqs-question-2"
+          data-parent="#faqs-accordion"
+        >
+          <div class="faqs__answer">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed sapien orci.
+            Praesent ac est ut magna lobortis posuere sodales vitae risus. Maecenas luctus dui
+            magna, quis hendrerit tortor vulputate eu. Nunc eu ornare dui, non cursus mi. Aenean
+            condimentum lorem id nibh lacinia congue. Donec ac pharetra risus. Sed risus odio,
+            posuere vitae gravida a, feugiat eu eros. Donec lectus libero, imperdiet vitae porta
+            sed, rutrum quis velit. Nulla aliquam aliquam dui non accumsan. Donec tincidunt cursus
+            massa quis feugiat.
+          </div>
+        </div>
+      </div>
+      <div class="faqs__item">
+        <h3 class="faqs__heading">
+          <button
+            class="faqs__question collapsed"
+            id="faqs-question-3"
+            type="button"
+            data-toggle="collapse"
+            data-target="#faqs-panel-3"
+            aria-expanded="false"
+            aria-controls="faqs-panel-3"
+          >
+            <span class="faqs__question-text">Lorem ipsum dolor sit amet?</span>
+            <svg
+              class="faqs__icon"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M11.06 5.53 8 8.58 4.94 5.53 4 6.47l4 4 4-4-.94-.94Z" fill="currentColor" />
+            </svg>
+          </button>
+        </h3>
+        <div
+          class="collapse faqs__panel"
+          id="faqs-panel-3"
+          role="region"
+          aria-labelledby="faqs-question-3"
+          data-parent="#faqs-accordion"
+        >
+          <div class="faqs__answer">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed sapien orci.
+            Praesent ac est ut magna lobortis posuere sodales vitae risus. Maecenas luctus dui
+            magna, quis hendrerit tortor vulputate eu. Nunc eu ornare dui, non cursus mi. Aenean
+            condimentum lorem id nibh lacinia congue. Donec ac pharetra risus. Sed risus odio,
+            posuere vitae gravida a, feugiat eu eros. Donec lectus libero, imperdiet vitae porta
+            sed, rutrum quis velit. Nulla aliquam aliquam dui non accumsan. Donec tincidunt cursus
+            massa quis feugiat.
+          </div>
+        </div>
+      </div>
+      <div class="faqs__item">
+        <h3 class="faqs__heading">
+          <button
+            class="faqs__question collapsed"
+            id="faqs-question-4"
+            type="button"
+            data-toggle="collapse"
+            data-target="#faqs-panel-4"
+            aria-expanded="false"
+            aria-controls="faqs-panel-4"
+          >
+            <span class="faqs__question-text">Lorem ipsum dolor sit amet?</span>
+            <svg
+              class="faqs__icon"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M11.06 5.53 8 8.58 4.94 5.53 4 6.47l4 4 4-4-.94-.94Z" fill="currentColor" />
+            </svg>
+          </button>
+        </h3>
+        <div
+          class="collapse faqs__panel"
+          id="faqs-panel-4"
+          role="region"
+          aria-labelledby="faqs-question-4"
+          data-parent="#faqs-accordion"
+        >
+          <div class="faqs__answer">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed sapien orci.
+            Praesent ac est ut magna lobortis posuere sodales vitae risus. Maecenas luctus dui
+            magna, quis hendrerit tortor vulputate eu. Nunc eu ornare dui, non cursus mi. Aenean
+            condimentum lorem id nibh lacinia congue. Donec ac pharetra risus. Sed risus odio,
+            posuere vitae gravida a, feugiat eu eros. Donec lectus libero, imperdiet vitae porta
+            sed, rutrum quis velit. Nulla aliquam aliquam dui non accumsan. Donec tincidunt cursus
+            massa quis feugiat.
+          </div>
+        </div>
+      </div>
+      <div class="faqs__item">
+        <h3 class="faqs__heading">
+          <button
+            class="faqs__question collapsed"
+            id="faqs-question-5"
+            type="button"
+            data-toggle="collapse"
+            data-target="#faqs-panel-5"
+            aria-expanded="false"
+            aria-controls="faqs-panel-5"
+          >
+            <span class="faqs__question-text">Lorem ipsum dolor sit amet?</span>
+            <svg
+              class="faqs__icon"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M11.06 5.53 8 8.58 4.94 5.53 4 6.47l4 4 4-4-.94-.94Z" fill="currentColor" />
+            </svg>
+          </button>
+        </h3>
+        <div
+          class="collapse faqs__panel"
+          id="faqs-panel-5"
+          role="region"
+          aria-labelledby="faqs-question-5"
+          data-parent="#faqs-accordion"
+        >
+          <div class="faqs__answer">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed sapien orci.
+            Praesent ac est ut magna lobortis posuere sodales vitae risus. Maecenas luctus dui
+            magna, quis hendrerit tortor vulputate eu. Nunc eu ornare dui, non cursus mi. Aenean
+            condimentum lorem id nibh lacinia congue. Donec ac pharetra risus. Sed risus odio,
+            posuere vitae gravida a, feugiat eu eros. Donec lectus libero, imperdiet vitae porta
+            sed, rutrum quis velit. Nulla aliquam aliquam dui non accumsan. Donec tincidunt cursus
+            massa quis feugiat.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

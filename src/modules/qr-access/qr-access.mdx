@@ -1,0 +1,22 @@
+import { Meta, Title, Description, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as QrAccess from './qr-access.stories'
+import { CodeTabs } from '../../stories/code-tabs.jsx'
+import html from './qr-access.html?raw'
+import scss from './qr-access.scss?raw'
+
+<Meta of={QrAccess} />
+
+<Title />
+
+<Description />
+
+Copia el HTML de abajo en un snippet del CMS. El destino es **HTML estático**: el texto va
+literal y se cambia en el CMS. La imagen está en `/images/roscon-king/`.
+
+<Canvas of={QrAccess.Default} />
+
+<Controls of={QrAccess.Default} />
+
+## Código
+
+<CodeTabs html={html} css={scss} />

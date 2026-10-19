@@ -1,3 +1,15 @@
 // Registro de los SCSS de cada pieza: un import por pieza, append-only, con la ruta
 // a su parcial (../../components/<name>/<name>). build-entrega lee esta lista para
 // saber qué CSS viaja con cada snippet.
+@import '../../components/prize-carousel/prize-carousel';
+@import '../../components/countdown/countdown';
+@import '../../modules/campaign-hero/campaign-hero';
+@import '../../modules/how-to-play/how-to-play';
+@import '../../modules/qr-access/qr-access';
+@import '../../modules/menu-grid/menu-grid';
+@import '../../modules/campaign-video/campaign-video';
+@import '../../modules/faqs/faqs';
+@import '../../modules/legal-links/legal-links';
+@import '../../modules/campaign-notice/campaign-notice';
+@import '../../layouts/header-bk/header-bk';
+@import '../../layouts/footer-bk/footer-bk';

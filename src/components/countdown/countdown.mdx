@@ -1,0 +1,30 @@
+import { Meta, Title, Description, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as Countdown from './countdown.stories'
+import { CodeTabs } from '../../stories/code-tabs.jsx'
+import html from './countdown.html?raw'
+import scss from './countdown.scss?raw'
+import js from './countdown.js?raw'
+
+<Meta of={Countdown} />
+
+<Title />
+
+<Description />
+
+El destino es **HTML estático**: el texto va literal y se cambia en el CMS. La fecha se pone en
+`data-countdown-target` (y en el `datetime` del `<time>`), en ISO 8601 con zona horaria:
+`2026-12-20T23:59:59+01:00`. El texto al terminar, opcional, en `data-countdown-done-text`.
+
+<Canvas of={Countdown.Default} />
+
+<Controls of={Countdown.Default} />
+
+## Al llegar a 0
+
+<Canvas of={Countdown.Ended} />
+
+## Código
+
+El JS se pega una vez por página, aunque haya varias cuentas atrás: arranca todas las que encuentre.
+
+<CodeTabs html={html} css={scss} js={js.replace(/^export /gm, '')} />

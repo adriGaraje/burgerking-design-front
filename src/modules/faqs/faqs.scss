@@ -1,0 +1,136 @@
+// COMPONENT · faqs — acordeón de preguntas frecuentes (collapse de Bootstrap 4, sin JS propio).
+// Fondo: el gris `#f8f8f8` del wireframe pasa a crema de marca (provisional).
+// Separadores: el trazo de 0,5 px negro del wireframe, como 1 px de tinta al 50 %.
+.faqs {
+  padding: 48px 0 24px;
+  background-color: $brand-surface-alt;
+  color: $brand-ink;
+
+  @include media-breakpoint-up(md) {
+    padding: 80px 0 24px;
+  }
+}
+
+.faqs__inner {
+  @include wrap;
+}
+
+// Título → subtítulo: 8. Cabecera → lista: 24.
+.faqs__header {
+  margin-bottom: 24px;
+}
+
+.faqs__title {
+  @include text-style('mobile-h2');
+
+  margin: 0;
+
+  @include media-breakpoint-up(md) {
+    @include text-style('h2');
+  }
+}
+
+.faqs__subtitle {
+  @include text-style('mobile-body');
+
+  margin: 8px 0 0;
+
+  @include media-breakpoint-up(md) {
+    @include text-style('body');
+  }
+}
+
+// Cada ítem cierra con su separador, también el último (así está en el wireframe).
+.faqs__item {
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgba($brand-ink, 0.5);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.faqs__heading {
+  margin: 0;
+  font-size: inherit;
+}
+
+// Reset del botón: Bootstrap 4.1.3 no trae `.accordion-button`.
+// Pregunta: `body` de la escala, pero en la familia de titulares (spec de marca, P4).
+.faqs__question {
+  @include text-style('mobile-body');
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  padding: 0;
+  font-family: $font-family-display;
+  font-weight: $font-weight-bold;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  background: none;
+  border: 0;
+
+  @include media-breakpoint-up(md) {
+    @include text-style('body');
+
+    align-items: center;
+    font-family: $font-family-display;
+    font-weight: $font-weight-bold;
+  }
+
+  &:focus-visible {
+    outline: 2px solid currentcolor;
+    outline-offset: 4px;
+  }
+}
+
+.faqs__icon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin-top: 4px;
+  transition: transform 0.2s ease;
+
+  @include media-breakpoint-up(md) {
+    margin-top: 0;
+  }
+
+  .faqs__question[aria-expanded='true'] & {
+    transform: rotate(180deg);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
+// El aire pregunta → respuesta va DENTRO del collapse, para que la animación no salte.
+.faqs__answer {
+  @include text-style('mobile-body');
+
+  padding-top: 8px;
+
+  @include media-breakpoint-up(md) {
+    @include text-style('body');
+  }
+}
+
+.faqs__ctas {
+  margin-top: 24px;
+}
+
+// Botón píldora de 40 de alto (Bootstrap 4.1.3 no trae `rounded-pill`).
+.faqs__cta {
+  @include text-style('button');
+
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 24px;
+  border-radius: 50rem;
+}

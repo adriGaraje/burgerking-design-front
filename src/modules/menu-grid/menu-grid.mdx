@@ -1,0 +1,34 @@
+import { Meta, Title, Description, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as MenuGrid from './menu-grid.stories'
+import { CodeTabs } from '../../stories/code-tabs.jsx'
+import html from './menu-grid.html?raw'
+import scss from './menu-grid.scss?raw'
+import countdownScss from '../../components/countdown/countdown.scss?raw'
+import countdownJs from '../../components/countdown/countdown.js?raw'
+
+<Meta of={MenuGrid} />
+
+<Title />
+
+<Description />
+
+Copia el HTML de abajo en un snippet del CMS. El destino es **HTML estático**: el texto va
+literal y se cambia en el CMS. Las imágenes y el icono están en `/images/roscon-king/`.
+
+<Canvas of={MenuGrid.Default} />
+
+<Controls of={MenuGrid.Default} />
+
+## Código
+
+<CodeTabs html={html} css={scss} />
+
+## Con cuenta atrás
+
+Oculta en el wireframe. Encendida, el snippet lleva dentro la pieza `Basics/Countdown`: su HTML
+sale en la pestaña **Code** de esta story, y hay que pegar también su CSS y su JS (una vez por
+página).
+
+<Canvas of={MenuGrid.WithCountdown} />
+
+<CodeTabs css={countdownScss} js={countdownJs.replace(/^export /gm, '')} />

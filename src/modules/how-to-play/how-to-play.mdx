@@ -1,0 +1,22 @@
+import { Meta, Title, Description, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as HowToPlay from './how-to-play.stories'
+import { CodeTabs } from '../../stories/code-tabs.jsx'
+import html from './how-to-play.html?raw'
+import scss from './how-to-play.scss?raw'
+
+<Meta of={HowToPlay} />
+
+<Title />
+
+<Description />
+
+Copia el HTML de abajo en un snippet del CMS. El destino es **HTML estático**: el texto va
+literal y se cambia en el CMS. Las imágenes y los iconos de tienda están en `/images/roscon-king/`.
+
+<Canvas of={HowToPlay.Default} />
+
+<Controls of={HowToPlay.Default} />
+
+## Código
+
+<CodeTabs html={html} css={scss} />

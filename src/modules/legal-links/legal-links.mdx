@@ -1,0 +1,33 @@
+import { Meta, Title, Description, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as LegalLinks from './legal-links.stories'
+import { CodeTabs } from '../../stories/code-tabs.jsx'
+import html from './legal-links.html?raw'
+import scss from './legal-links.scss?raw'
+
+<Meta of={LegalLinks} />
+
+<Title />
+
+<Description />
+
+Copia el HTML de abajo en el CMS. El destino es **HTML estático**: no hay hooks, el texto va
+literal y se cambia en el CMS (o en los Controls, y se copia desde la pestaña «Code»).
+
+## Oleadas: dos enlaces, a la izquierda
+
+<Canvas of={LegalLinks.Wave} />
+
+<Controls of={LegalLinks.Wave} />
+
+## Entre oleadas y final: cuatro enlaces, centrada
+
+<Canvas of={LegalLinks.Notice} />
+
+## Código
+
+<CodeTabs html={html} css={scss} />
+
+| Variable | Qué es                                                                  |
+| -------- | ----------------------------------------------------------------------- |
+| `links`  | Lista de enlaces `{ label, href }`, en orden. Sin `href`, apunta a `#`. |
+| `align`  | `start` (izquierda desde tablet) o `center`. En móvil, siempre centrada. |

@@ -9,3 +9,5 @@ import './globals.js'
 // --- POR PIEZA — solo si el snippet está en la página ---
 // Un import por pieza con JS propio (../components/<name>/<name>.js). build-entrega
 // lee este bloque para emitir el JS de cada snippet.
+import '../components/prize-carousel/prize-carousel.js'
+import '../components/countdown/countdown.js'

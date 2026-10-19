@@ -1,0 +1,167 @@
+// COMPONENT · prize-carousel — carrusel de premios (Figma 8206:134).
+// ---------------------------------------------------------------------------
+// Pieza a sangre: ocupa el ancho de su contenedor. El título va en la columna del
+// sitio (`wrap`); la pista no, porque en el diseño se sale por los dos lados.
+// Medidas de 1440: premio 227 (imagen 227² r4 + 8 + etiqueta), hueco 40, flechas
+// 48 a 40 del borde. Móvil (decisión nuestra, spec §7): premio 160, hueco 16,
+// sin flechas (swipe) y con snap que centra un premio.
+// Colores: alias de marca y variables de Bootstrap (PROVISIONAL, wireframe gris).
+
+.prize-carousel {
+  --prize-carousel-size: 160px;
+  --prize-carousel-gap: 16px;
+
+  @include media-breakpoint-up(md) {
+    --prize-carousel-size: 227px;
+    --prize-carousel-gap: 40px;
+  }
+}
+
+// Wireframe 28 bold → h2 de la escala (reports/brand-tokens/spec.md §3).
+.prize-carousel__title {
+  @include wrap;
+  @include text-style('mobile-h2');
+
+  margin-bottom: 1.5rem;
+  color: $brand-ink;
+  text-align: center;
+
+  @include media-breakpoint-up(md) {
+    @include text-style('h2');
+  }
+}
+
+.prize-carousel__stage {
+  position: relative;
+}
+
+// La caja que desplaza. Scrollbar oculta: se navega con swipe, flechas o teclado.
+.prize-carousel__viewport {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $brand-ink;
+    outline-offset: -2px;
+  }
+
+  // Escritorio: sin snap. Con 6 premios a 1440 el recorrido es de 122 px y el
+  // encuadre del diseño (centrado) no coincide con ningún punto de snap.
+  @include media-breakpoint-up(md) {
+    scroll-snap-type: none;
+  }
+}
+
+// `max-content` + `margin: auto`: si caben todos, se centran; si no, la pista
+// empieza en el borde y se desplaza (un `justify-content: center` dejaría el
+// principio fuera de alcance).
+.prize-carousel__track {
+  display: flex;
+  gap: var(--prize-carousel-gap);
+  width: max-content;
+  margin-inline: auto;
+
+  // Móvil: el primero y el último también pueden quedar centrados.
+  padding-inline: calc(50% - var(--prize-carousel-size) / 2);
+
+  @include media-breakpoint-up(md) {
+    padding-inline: 0;
+  }
+}
+
+.prize-carousel__item {
+  flex: 0 0 var(--prize-carousel-size);
+  width: var(--prize-carousel-size);
+  scroll-snap-align: center;
+  transition: opacity 0.2s ease;
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
+// Lo pone el JS al premio que no se ve entero (diseño: ítems 1 y 6 a .4).
+.prize-carousel__item--dimmed {
+  opacity: 0.4;
+}
+
+.prize-carousel__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 4px;
+  background-color: $brand-surface;
+}
+
+// Wireframe 14 bold: la escala no tiene 14; va a `button` (Flame 16/24), lo más cercano.
+.prize-carousel__label {
+  @include text-style('button');
+
+  color: $brand-ink;
+  text-align: center;
+}
+
+// Círculo de 48, blanco, borde claro y sombra (8206:155 / 8206:157). El centro cae
+// 3 px por debajo del de la imagen, como en el diseño (spec pregunta 7).
+.prize-carousel__arrow {
+  position: absolute;
+  top: calc(var(--prize-carousel-size) / 2 + 3px - 24px);
+  z-index: 1;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 1px solid $gray-300;
+  border-radius: 50%;
+  background-color: $brand-surface;
+  box-shadow: 0 4px 4px rgba($black, 0.25);
+  color: $brand-ink;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    border: 1px solid $gray-300;
+    background-color: $brand-surface-alt;
+    color: $brand-ink;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $brand-ink;
+    outline-offset: 2px;
+  }
+
+  &[aria-disabled='true'] {
+    background-color: $brand-surface;
+    opacity: 0.4;
+    cursor: default;
+  }
+}
+
+.prize-carousel__arrow--prev {
+  left: 40px;
+}
+
+.prize-carousel__arrow--next {
+  right: 40px;
+}
+
+.prize-carousel__chevron {
+  display: block;
+}
