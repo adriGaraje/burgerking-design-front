@@ -124,8 +124,9 @@ const renderLabel = (item) => {
 addons.setConfig({
   theme: create({
     base: 'light',
-    // Sin «WIP»: esto se lee en la barra lateral del sitio que recibe el cliente.
-    brandTitle: 'Burgerking-design-front',
+    // Barra lateral y pestaña del navegador. «- wip» en pre y en local; pro, que es
+    // lo que recibe el cliente, va sin él.
+    brandTitle: A_PRO ? 'Burger King Design' : 'Burger King Design - wip',
     brandUrl: './',
   }),
   sidebar: {
