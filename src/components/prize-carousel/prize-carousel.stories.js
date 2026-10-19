@@ -70,7 +70,7 @@ export default {
       description: {
         component:
           'Carrusel de premios «¿Qué puedes ganar?». Pieza reutilizable a sangre: el título va en la columna del sitio y la pista ocupa todo el ancho. Por Controls se cambian el título, la lista de premios (imagen, alt y nombre; cualquier número) y los textos de las flechas.\n\n' +
-          'Comportamiento: scroll horizontal nativo; arranca centrado (a 1440, con 6 premios, asoman cortados el primero y el último, como en el diseño); el premio que no se ve entero se atenúa a 0,4; las flechas avanzan un premio y se apagan en los extremos; con la pista enfocada, ← → e Inicio / Fin. JS en `prize-carousel.js` (`initPrizeCarousel`).\n\n' +
+          'Comportamiento: scroll horizontal nativo; arranca centrado (a 1440 asoman cortados los premios de los extremos, como en el diseño; el wireframe trae 6 y aquí van 10 de relleno para que el carrusel tenga recorrido); el premio que no se ve entero se atenúa a 0,4; las flechas avanzan un premio y se apagan en los extremos; con la pista enfocada, ← → e Inicio / Fin. JS en `prize-carousel.js` (`initPrizeCarousel`).\n\n' +
           '**Pendiente de diseño:** las fotos y los nombres de los premios (hoy, imagen gris y «Premio n»), el icono de las flechas (el wireframe usa «<» «>» en texto) y la versión móvil, que es decisión nuestra: premios de 160, sin flechas y con snap que centra un premio. Colores y tipografía, provisionales de marca.',
       },
       source: { language: 'html', transform: (_c, ctx) => renderPrizeCarousel(ctx.args) },
