@@ -7,12 +7,12 @@
 //   · Flechas: avanzan un premio; en los extremos quedan `aria-disabled` (no
 //     `disabled`, para que el foco no se pierda) y, si todo cabe, se ocultan.
 //   · Teclado sobre la pista enfocada: ← → un premio, Inicio / Fin a los extremos.
-//   · Atenuado: el premio que no se ve entero va a opacity .4 (diseño: los extremos
-//     cortados), y se recalcula al desplazar.
+//   · Atenuado: el premio que no cabe entero entre las dos flechas va a opacity .4
+//     (diseño: los de los extremos, debajo de las flechas). Si una flecha está apagada
+//     o escondida, manda el borde de la pista. Se recalcula al desplazar y al redimensionar.
 // Idempotente: marca cada carrusel con `data-prize-carousel-ready`.
 
 const DIMMED = 'prize-carousel__item--dimmed'
-const RATIO_ENTERO = 0.95
 
 const reduceMotion = () =>
   typeof window.matchMedia === 'function' &&
@@ -39,12 +39,35 @@ function setup(carousel) {
     boton.setAttribute('aria-disabled', apagada ? 'true' : 'false')
   }
 
+  // Síncrono y por medidas: un IntersectionObserver llegaba tarde (o nunca, si la pista
+  // se montaba fuera del documento) y medía contra la pista, no contra las flechas.
+  // Una flecha cuenta si se pinta: en móvil la esconde el CSS (`display: none`) y su caja
+  // mide 0, que como límite atenuaría la pista entera.
+  const limite = (boton, lado, borde) =>
+    boton &&
+    !boton.hidden &&
+    boton.getClientRects().length > 0 &&
+    boton.getAttribute('aria-disabled') !== 'true'
+      ? boton.getBoundingClientRect()[lado]
+      : borde
+
+  const atenua = () => {
+    const caja = viewport.getBoundingClientRect()
+    const izq = limite(prev, 'right', caja.left)
+    const der = limite(next, 'left', caja.right)
+    items.forEach((li) => {
+      const r = li.getBoundingClientRect()
+      li.classList.toggle(DIMMED, r.left < izq - 1 || r.right > der + 1)
+    })
+  }
+
   const actualiza = () => {
     const tope = max()
     const desborda = tope > 1
     ;[prev, next].forEach((b) => b && (b.hidden = !desborda))
     marcaFlecha(prev, viewport.scrollLeft <= 1)
     marcaFlecha(next, viewport.scrollLeft >= tope - 1)
+    atenua()
   }
 
   // El primer encuadre necesita medidas reales: se hace cuando la pista ya tiene
@@ -81,17 +104,6 @@ function setup(carousel) {
   } else {
     window.addEventListener('resize', encuadra)
     window.requestAnimationFrame(encuadra)
-  }
-
-  if (typeof IntersectionObserver === 'function') {
-    const io = new IntersectionObserver(
-      (entradas) =>
-        entradas.forEach((en) =>
-          en.target.classList.toggle(DIMMED, en.intersectionRatio < RATIO_ENTERO)
-        ),
-      { root: viewport, threshold: [0, RATIO_ENTERO, 1] }
-    )
-    items.forEach((li) => io.observe(li))
   }
 }
 

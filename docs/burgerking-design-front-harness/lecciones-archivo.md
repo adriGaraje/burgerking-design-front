@@ -896,3 +896,10 @@
 - **Síntoma:** plugin `enabled` y servidor `Connected` en `claude mcp list`, pero las tools `mcp__plugin_*` no están disponibles en la sesión.
 - **Causa:** Claude Code carga el toolset de cada servidor **al arrancar**; si la sesión empezó antes de autenticar, no las registra.
 - **Solución:** autenticar el servidor en `/mcp` y **reiniciar** Claude Code en la carpeta.
+
+## L-106 · Un estado visual que depende de medir no se calcula contra lo que no se pinta
+
+- **Síntoma:** en el carrusel de premios del Roscón (`prize-carousel`), los premios de los extremos —los que quedan debajo de las flechas— no se difuminaban en escritorio. Tras arreglarlo, en móvil se difuminaban **todos**, incluido el del centro. Los `play` estaban en verde las dos veces.
+- **Causa:** dos distintas. (1) El atenuado iba por `IntersectionObserver` contra la pista: es asíncrono, la story engancha el carrusel antes de colgarlo del documento y, aunque se dispare, mide «visible dentro de la pista», no «fuera de las flechas». (2) Ya con medidas síncronas contra las flechas, en móvil las flechas están en `display: none`: `getBoundingClientRect()` devuelve 0 y ese 0 hacía de límite, así que todo quedaba «fuera».
+- **Solución:** cálculo síncrono en el mismo `actualiza()` que corre en scroll y en resize, contra la caja de las flechas **solo si se pintan** (`getClientRects().length > 0`) y no están apagadas; si no, contra el borde de la pista. Y el `play` comprueba el criterio exacto (los cortados atenuados y los demás no, y nunca todos), no solo que el carrusel arranca.
+- **Regla general:** antes de usar la caja de un elemento como límite, comprueba que se pinta: un `display: none` mide 0 y no avisa. Y un `play` que solo mira que algo «arranca» no ve un estado visual roto: aserta el estado.
