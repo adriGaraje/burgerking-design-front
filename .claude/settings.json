@@ -1,0 +1,30 @@
+{
+  "enabledPlugins": {
+    "figma@claude-plugins-official": true
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/session-start.mjs",
+            "timeout": 10,
+            "statusMessage": "Cargando contexto de burgerking-design-front-flow…"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/ritual-detect.mjs",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
